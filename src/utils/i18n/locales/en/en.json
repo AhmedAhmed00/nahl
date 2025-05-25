@@ -1,0 +1,90 @@
+{
+  
+  "common":{ 
+    "searchInput":"What are you looking for ...?",
+    "next":"Next",
+    "update":"Update",
+    "login":"login",
+    "logout":"logout"
+  },
+  
+  "dashboard":{ 
+    "totalRevenue":"Total Revenue",
+    "totalOrders":"Total Orders",
+    "availableProduts":"Available Products",
+     "todaySales":"Today's Sales"
+  } , 
+  
+
+  "routes":{ 
+    "dashboard":"dashboard",
+    "vendor":"vendor",
+    "category":"category",
+    "products":"products",
+    "orders":"orders",
+    "customers":"customers",
+    "ads":"ads",
+    "discountsAndCoupons":"discounts and coupons",
+    "employeesAndRoles":"employees and roles",
+    "reviews":"reviews",
+    "payments":"payments",
+    "branches":"branches"
+  },
+
+  
+  "dataKeys":{ 
+    "name":"Name",
+    "email":"Email",
+    "phone":"Phone",
+    "address":"Address",
+    "city":"City",
+    "actions":"Actions",
+    "title":"Title",
+    "specializatoin":"Specializatoin",
+    "image":"image",
+    "patient name":"patient name",
+    "provider name":"provider name",
+    "service":"service",
+    "branch":"branch",
+    "status":"status",
+    "schedule":"schedule",
+    "day":"day",
+    "created at":"created at",
+    "service name":"service name",
+    "service name ar":"service name ar",
+    "service type":"service type",
+    "category":"category",
+    "specialization":"Specialization",
+    "subSpecialization":"Specialization",
+    "name ar":"name ar",
+    "type":"type",
+    "region":"region",
+    "start date":"start date",
+    "end date":"end date",
+    "patient":"patient",
+    "password":"password",
+    "discountPercentage":"Discount Percentage",
+    "taxRegistration":"tax registration",
+    "profilePic":"profile Picture",
+    "licenseImage":"license Image",
+    "services":"Services",
+    "hospitalImages":"hospital Images",
+    "gender":"gender",
+    "bio":"bio",
+    "clinicImages":"clinic Images",
+    "labImages":"lab images",
+    "scanImages":"scan images",
+    "therapyImages":"therapy images",
+    "nameEn":"name en",
+    "nameAr":"name ar",
+    "categoryType":"category Type",
+    "jobRole":"job role",
+    "role":"Role"
+ 
+  }
+  
+  
+  
+
+ 
+}

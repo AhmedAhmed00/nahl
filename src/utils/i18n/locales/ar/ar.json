@@ -1,0 +1,95 @@
+{
+  
+  
+  "common":{ 
+    "next":"التالي",
+    "update":"تحديث",
+    "login":"تسجيل الدخول",
+    "logout":"تسجيل الخروح"
+
+  },
+  "dashboard": {
+  "totalRevenue": "إجمالي الإيرادات",
+  "totalOrders": "إجمالي الطلبات",
+  "availableProduts": "المنتجات المتاحة",
+  "todaySales": "مبيعات اليوم"
+},
+
+    "routes": {
+    "dashboard": "لوحة التحكم",
+    "vendor": "البائع",
+    "category": "الفئة",
+    "products": "المنتجات",
+    "orders": "الطلبات",
+    "customers": "العملاء",
+    "ads": "الإعلانات",
+    "discountsAndCoupons": "الخصومات والقسائم",
+    "employeesAndRoles": "الموظفون والأدوار",
+    "reviews": "المراجعات",
+    "payments": "المدفوعات",
+    "branches": "الفروع"
+  },
+  
+  
+
+  
+  "dataKeys": {
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "city": "المدينة",
+    "actions": "الإجراءات",
+    "title": "التسمية",
+    "specializatoin": "التخصص",
+    "subSpecialization":"التخصص الفرعي",
+    "image":"الصورة",
+    "patient name":"إسم العميل",
+    "provider name":"اسم البروفايدر",
+    "service":"الخدمة",
+    "branch":"الفرع",
+    "status":"الحالة",
+    "schedule":"الميعاد",
+    "day":"اليوم",
+    "created at":"تاريخ الإنشاء",
+    "service name":"إسم الخدمة بالإنجليزية",
+    "service name ar":"إسم الخدمة بالعربية",
+    "service type":"نوع الخدمة",
+    "category":"التصنيف",
+    "specialization":"التخصص",
+    "name ar":"الإسم بالعربية",
+    "type":"النوع",
+    "region":"المنطقة",
+    "start date":"تاريخ البدء",
+    "end date":"تاريخ الإنتهاء",
+    "patient":"المريض",
+    "password":"الرقم السري",
+    "discountPercentage":"نسبة الخصم",
+    "taxRegistration":"الرقم الضريبي",
+    "profilePic":"صورة الملف الشخصي",
+    "licenseImage":"صورة الرخصة",
+    "services":"الخدمات",
+    "hospitalImages":"صور المستشفي",
+    "gender":"النوع",
+    "bio":"نبذة تعريفية" ,
+    "clinicImages":"صور العيادة",
+    "labImages":"صور المعمل",
+    "scanImages":"صور السكان",
+    "therapyImages":"صور معمل العلاج الطبيعي",
+    "nameEn":"الإسم بالإنجليزية",
+    "nameAr":"الإسم بالعربية",
+    "categoryType": "نوع التصنيف",
+    "jobRole":"الوظيفة",
+    "role":"الوظيفة"
+    
+
+
+
+
+}
+
+
+  
+
+
+}
