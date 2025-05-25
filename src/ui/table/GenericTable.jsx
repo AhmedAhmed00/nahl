@@ -20,9 +20,7 @@ export default function GenericTable({
     <Table role="table">
       <TableHeader cols={headers.length} role="row">
         {headers.map((head) => (
-          <TableHead key={head}>
-            {t(`dataKeys.${head.toLowerCase()}`)}
-          </TableHead>
+          <TableHead key={head}>{t(`dataKeys.${head}`)}</TableHead>
         ))}
       </TableHeader>
 

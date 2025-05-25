@@ -3,8 +3,8 @@ import styled from "styled-components";
 const StyledLogo = styled.div`
   /* text-align: center; */
   display: flex;
-  width: ${({ $w }) => $w && `${$w}px`};
-  height: ${({ $h }) => $h && `${$h}px`};
+  width: ${({ $w }) => $w && `${$w}`};
+  height: ${({ $h }) => $h && `${$h}`};
   margin: auto;
 
   align-items: center;
@@ -17,7 +17,7 @@ const Img = styled.img`
   width: 100%;
 `;
 
-function Logo({ w = 300, h = 200 }) {
+function Logo({ w = "300px", h = "200px" }) {
   return (
     <StyledLogo $w={w} $h={h}>
       <Img src="/Logo.png" alt="Logo" />

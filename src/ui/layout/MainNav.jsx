@@ -48,7 +48,18 @@ function MainNav() {
   const { t } = useTranslation();
   return (
     <nav>
-      <Logo w={200} h={100} />
+      <div
+        style={{
+          width: "70%",
+          height: "100px",
+          overflow: "hidden",
+          textAlign: "center",
+          margin: "auto",
+          marginBottom: "10px",
+        }}
+      >
+        <Logo w={"100%"} h={"100%"} />
+      </div>
 
       <NavList>
         {navItems?.map((item, index) => (

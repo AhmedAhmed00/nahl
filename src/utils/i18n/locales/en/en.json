@@ -79,7 +79,12 @@
     "nameAr":"name ar",
     "categoryType":"category Type",
     "jobRole":"job role",
-    "role":"Role"
+    "role":"Role",
+      "vendorName": "Vendor Name",
+  "phoneNumber": "Phone Number",
+  "numOfProdcuts": "Number of Products",
+  "totalSales": "Total Sales",
+  "date": "Date"
  
   }
   

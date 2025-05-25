@@ -16,19 +16,14 @@ export default function LineChartCustomers() {
     <StatsWrapper>
       <ChartHead as={"h3"}>Total Customers</ChartHead>
 
-      <ResponsiveContainer>
+      <ResponsiveContainer height={400}>
         <LineChart
           data={data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
-          <CartesianGrid strokeDasharray="3 20" />
-          <XAxis
-            tick={{ fontSize: 12 }} // ← change font size here
-            dataKey="name"
-          />
-          <YAxis
-            tick={{ fontSize: 12 }} // ← change font size here
-          />
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
           <Tooltip />
           <Line type="monotone" dataKey="value" stroke="#8884d8" />
         </LineChart>

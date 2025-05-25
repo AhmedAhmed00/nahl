@@ -32,7 +32,7 @@ export default function BarChartSales() {
   return (
     <StatsWrapper>
       <ChartHead as={"h3"}>Total Salses</ChartHead>
-      <ResponsiveContainer>
+      <ResponsiveContainer height={400}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 20" />
           <XAxis

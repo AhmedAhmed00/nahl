@@ -7,6 +7,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Unauthorized from "./features/authentication/Unauthorized";
 
 import AppLayout from "./ui/layout/AppLayout";
+import Vendor from "./pages/Vendor";
 
 const protectedRoutes = [
   {
@@ -15,7 +16,7 @@ const protectedRoutes = [
     children: [
       { index: true, element: <Navigate replace to="dashboard" /> },
       { path: "dashboard", element: <Dash /> },
-
+      { path: "/vendor", element: <Vendor /> },
       // Management
       // {
       //   path: "management",
