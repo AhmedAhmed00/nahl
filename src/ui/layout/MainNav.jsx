@@ -22,7 +22,7 @@ import { NavList } from "../NavList";
 const navItems = [
   { path: "/dashboard", icon: <HiOutlineHome />, label: "dashboard" },
   { path: "/vendor", icon: <HiOutlineBuildingStorefront />, label: "vendor" },
-  { path: "/category", icon: <HiOutlineTag />, label: "category" },
+  { path: "/categories", icon: <HiOutlineTag />, label: "categories" },
   { path: "/products", icon: <HiOutlineCube />, label: "products" },
   { path: "/orders", icon: <HiOutlineShoppingCart />, label: "orders" },
   { path: "/customers", icon: <HiOutlineUserGroup />, label: "customers" },

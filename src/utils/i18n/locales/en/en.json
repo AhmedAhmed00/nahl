@@ -28,7 +28,9 @@
     "employeesAndRoles":"employees and roles",
     "reviews":"reviews",
     "payments":"payments",
-    "branches":"branches"
+    "branches":"branches",
+      "categories":"categories"
+
   },
 
   
@@ -84,8 +86,36 @@
   "phoneNumber": "Phone Number",
   "numOfProdcuts": "Number of Products",
   "totalSales": "Total Sales",
-  "date": "Date"
+  "date": "Date",
+  "categoryName":"category Name",
+  "numberOfProducts":"number of products",
+  "confirmPassword":"confirm Password",
+  "storeName":"store name",
+  "websiteLink":"website link",
+  "storeAddress":"store address",
+  "description":"description",
+  "location":"location",
+  "storeLogo":"store logo",
+  "paymentMethod":"payment method",
+  "bankAccount":"bank account",
+  "commission":"commission"
+  
  
+  },
+  "addButtons":{ 
+    "addVendor":"Add Vendor"
+  },
+  
+  "groupInputHeader":{
+    "basicInfo":"Basic info",
+    "storeDetails":"Store details",
+    "financialSetting":"Financial Setting"
+    
+  },
+  
+  
+  "addTitles":{ 
+    "addNewVendor":"Add new vendor"
   }
   
   

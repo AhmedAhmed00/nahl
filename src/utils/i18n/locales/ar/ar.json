@@ -27,7 +27,9 @@
     "employeesAndRoles": "الموظفون والأدوار",
     "reviews": "المراجعات",
     "payments": "المدفوعات",
-    "branches": "الفروع"
+    "branches": "الفروع",
+      "categories":"التصنيفات"
+
   },
   
   
@@ -80,16 +82,36 @@
     "nameAr":"الإسم بالعربية",
     "categoryType": "نوع التصنيف",
     "jobRole":"الوظيفة",
-    "role":"الوظيفة"
+    "role":"الوظيفة",
+      "storeName": "اسم المتجر",
+  "websiteLink": "رابط الموقع",
+  "storeAddress": "عنوان المتجر",
+  "description": "الوصف",
+  "location": "الموقع",
+  "storeLogo": "شعار المتجر",
+  "paymentMethod": "طريقة الدفع",
+  "bankAccount": "الحساب البنكي",
+  "commission": "العمولة"
     
 
 
 
 
 }
+,
 
-
+  "groupInputHeader": {
+    "basicInfo": "المعلومات الأساسية",
+    "storeDetails": "تفاصيل المتجر",
+    "financialSetting": "الإعدادات المالية"
+  },
   
-
+  
+    "addButtons":{ 
+    "addVendor":"إضافة بائع"
+  },
+"addTitles":{ 
+    "addNewVendor":"إضافة بائع جديد"
+  }
 
 }

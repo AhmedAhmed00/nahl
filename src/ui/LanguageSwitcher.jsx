@@ -10,6 +10,7 @@ export const DropdownContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 60px;
+  background-color: #f9f9f9;
 `;
 
 export const DropdownList = styled.ul`
@@ -17,7 +18,7 @@ export const DropdownList = styled.ul`
   width: 100%;
   max-height: 20rem;
   overflow-y: auto;
-  background-color: white;
+  background-color: #f9f9f9;
   border: 1px solid var(--color-grey-300);
   border-radius: var(--border-radius-sm);
   margin-top: 0.5rem;
@@ -45,6 +46,7 @@ const InputField = styled(Input).attrs({ as: "div" })`
   flex-direction: ${({ theme }) =>
     theme.direction === "rtl" ? "row-reverse" : "row"};
   gap: 6px;
+  background-color: #f9f9f9;
 
   align-items: center;
 

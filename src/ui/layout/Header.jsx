@@ -25,7 +25,7 @@ export const Avatar = styled.img`
 function Header({ title }) {
   return (
     <StyledHeader>
-      <Heading as="h3">
+      <Heading as="h3" color="primary">
         <span>{title}</span>
       </Heading>
       <LanguageSwitcher />

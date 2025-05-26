@@ -1,9 +1,9 @@
 import GenericTable from "../../ui/table/GenericTable";
-import VendorRow from "./VendorRow";
 import { renderRow } from "../../ui/RenderRow";
-import { VENDOR_HEADS } from "../../data/gridKeys";
+import ProductRow from "./ProductRow";
+import { PRODUCTS_HEADS } from "../../data/gridKeys";
 
-function VendorTable() {
+function ProductsTable() {
   const data = [
     {
       vendorName: "test",
@@ -18,9 +18,9 @@ function VendorTable() {
   return (
     <>
       <GenericTable
-        headers={VENDOR_HEADS}
+        headers={PRODUCTS_HEADS}
         data={data}
-        renderRow={renderRow(VendorRow)}
+        renderRow={renderRow(ProductRow)}
         pageSize={20}
         resaultsCount={20}
         isLoading={false}
@@ -29,4 +29,4 @@ function VendorTable() {
   );
 }
 
-export default VendorTable;
+export default ProductsTable;

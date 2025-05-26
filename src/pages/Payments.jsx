@@ -1,27 +1,23 @@
-import { useTranslation } from "react-i18next";
-import VendorTable from "../features/vendor/VendorTable";
 import { Section } from "../ui/Container";
 import Row from "../ui/Row";
+import { useTranslation } from "react-i18next";
+import PaymentsTable from "../features/payments/PaymentsTable";
 import { OperationsContainer } from "../ui/OperationsContainer";
 import TableOperations from "../ui/table/TableOperations";
 import SearchInput from "../ui/SearchInput";
 
-function Vendor() {
+function Payments() {
   const { t } = useTranslation();
-
   return (
-    <Section title={t("routes.vendor")}>
+    <Section title={t("routes.payments")}>
       <OperationsContainer>
         <SearchInput />
-        <TableOperations
-          addTitle={t("addButtons.addVendor")}
-          addPath={"/vendor/vendor-form"}
-        />
+        <TableOperations addTitle={"Add Review"} />
       </OperationsContainer>
       <Row>
-        <VendorTable />
+        <PaymentsTable />
       </Row>
     </Section>
   );
 }
-export default Vendor;
+export default Payments;

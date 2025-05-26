@@ -3,8 +3,7 @@ import GenericTable from "../../ui/table/GenericTable";
 import TableOperations from "../../ui/table/TableOperations";
 import Row from "../../ui/Row";
 import ClientRow from "./ClientsRow";
-
-export const CLIENTS_HEADS = ["Name", "Phone", "Email", "Service", "Actions"];
+import { CLIENTS_HEADS } from "../../data/gridKeys";
 
 export const renderClientRow = (client, index) => (
   <ClientRow client={client} key={index} />

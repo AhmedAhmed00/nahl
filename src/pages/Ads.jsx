@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import AdsTable from "../features/ads/AdsTable";
 import useModal from "../hooks/useModal";
-import { Container } from "../ui/Container";
+import { Container, Section } from "../ui/Container";
 import { OperationsContainer } from "../ui/OperationsContainer";
 import Row from "../ui/Row";
 import SearchInput from "../ui/SearchInput";
@@ -20,7 +20,7 @@ function Ads() {
   const { t, i18n: { language } = {} } = useTranslation();
 
   return (
-    <Container>
+    <Section title={t("routes.ads")}>
       <OperationsContainer>
         <SearchInput />
 
@@ -46,7 +46,7 @@ function Ads() {
         <AdsTable />
       </Row>
 
-      {openModal &&
+      {/* {openModal &&
         createPortal(
           <FormModal
             isClosing={isClosing}
@@ -56,8 +56,8 @@ function Ads() {
             form={<AdForm handleClose={handleClose} />}
           />,
           document.body
-        )}
-    </Container>
+        )} */}
+    </Section>
   );
 }
 

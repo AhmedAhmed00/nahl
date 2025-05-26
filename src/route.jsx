@@ -8,6 +8,16 @@ import Unauthorized from "./features/authentication/Unauthorized";
 
 import AppLayout from "./ui/layout/AppLayout";
 import Vendor from "./pages/Vendor";
+import Categories from "./pages/Categories";
+import Products from "./pages/Products";
+import Orders from "./pages/orders";
+import Customers from "./pages/Customers";
+import Ads from "./pages/Ads";
+import DiscountsAndCoupons from "./pages/DiscountsAndCoupons";
+import Reviews from "./pages/Reviews";
+import Payments from "./pages/Payments";
+import Branches from "./pages/Branches";
+import VendorForm from "./features/vendor/VendorForm";
 
 const protectedRoutes = [
   {
@@ -17,6 +27,17 @@ const protectedRoutes = [
       { index: true, element: <Navigate replace to="dashboard" /> },
       { path: "dashboard", element: <Dash /> },
       { path: "/vendor", element: <Vendor /> },
+      { path: "/vendor/vendor-form", element: <VendorForm /> },
+      { path: "/categories", element: <Categories /> },
+      { path: "/products", element: <Products /> },
+      { path: "/orders", element: <Orders /> },
+      { path: "/customers", element: <Customers /> },
+      { path: "/ads", element: <Ads /> },
+      { path: "/discounts-and-coupons", element: <DiscountsAndCoupons /> },
+      { path: "/reviews", element: <Reviews /> },
+      { path: "/payments", element: <Payments /> },
+      { path: "/branches", element: <Branches /> },
+
       // Management
       // {
       //   path: "management",
