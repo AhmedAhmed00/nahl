@@ -2,6 +2,11 @@ import styled, { css } from "styled-components";
 
 const Form = styled.form`
   min-height: 100%;
+  & button {
+    margin-top: 24px;
+    margin-right: auto;
+    display: block;
+  }
   ${(props) =>
     props.type !== "modal" &&
     css`
@@ -21,7 +26,7 @@ const Form = styled.form`
     `}
     
 
-  font-size: 1.4rem;
+  font-size: 1.45rem;
 `;
 
 export default Form;

@@ -18,6 +18,7 @@ import Reviews from "./pages/Reviews";
 import Payments from "./pages/Payments";
 import Branches from "./pages/Branches";
 import VendorForm from "./features/vendor/VendorForm";
+import CategoryForm from "./features/categories/CategoryForm";
 
 const protectedRoutes = [
   {
@@ -26,9 +27,13 @@ const protectedRoutes = [
     children: [
       { index: true, element: <Navigate replace to="dashboard" /> },
       { path: "dashboard", element: <Dash /> },
+
       { path: "/vendor", element: <Vendor /> },
       { path: "/vendor/vendor-form", element: <VendorForm /> },
+
       { path: "/categories", element: <Categories /> },
+      { path: "/categories/category-form", element: <CategoryForm /> },
+
       { path: "/products", element: <Products /> },
       { path: "/orders", element: <Orders /> },
       { path: "/customers", element: <Customers /> },

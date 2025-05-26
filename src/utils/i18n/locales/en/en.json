@@ -98,12 +98,16 @@
   "storeLogo":"store logo",
   "paymentMethod":"payment method",
   "bankAccount":"bank account",
-  "commission":"commission"
+  "commission":"commission",
+  "subCategory":"sub category",
+  "imageSubCategory":"Sub Category Image"
+  
   
  
   },
   "addButtons":{ 
-    "addVendor":"Add Vendor"
+    "addVendor":"Add Vendor",
+    "addCategory":"Add Category"
   },
   
   "groupInputHeader":{

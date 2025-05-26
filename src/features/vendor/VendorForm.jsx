@@ -16,7 +16,7 @@ import styled from "styled-components";
 import FileInput from "../../ui/FileInput";
 import InputsHeader from "../../ui/InputsHeader";
 
-function DoctorForm() {
+function VendorForm() {
   const { id, isEditingSession } = useDetectMode();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -157,16 +157,14 @@ function DoctorForm() {
           </FormRow>
         </InputsRow>
 
-        <Row margin="20px 10px" type="horizontal" justify="end" gap="15px">
-          <Button isLoading={false} size="medium" $variation="primary">
-            {isEditingSession
-              ? t("updateButtons.updateDoctor")
-              : t("addButtons.addVendor")}
-          </Button>
-        </Row>
+        <Button isLoading={false} size="medium" $variation="primary">
+          {isEditingSession
+            ? t("updateButtons.updateDoctor")
+            : t("addButtons.addVendor")}
+        </Button>
       </Form>
     </Section>
   );
 }
 
-export default DoctorForm;
+export default VendorForm;

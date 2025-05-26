@@ -92,8 +92,10 @@
   "paymentMethod": "طريقة الدفع",
   "bankAccount": "الحساب البنكي",
   "commission": "العمولة"
-    
-
+    ,
+"subCategory": "الفئة الفرعية",
+"imageSubCategory": "صورة الفئة الفرعية",
+"categoryName":"اسم الفئة"
 
 
 
@@ -108,7 +110,8 @@
   
   
     "addButtons":{ 
-    "addVendor":"إضافة بائع"
+    "addVendor":"إضافة بائع",
+    "addCategory":"إضافة تصنيف"
   },
 "addTitles":{ 
     "addNewVendor":"إضافة بائع جديد"
