@@ -95,7 +95,19 @@
     ,
 "subCategory": "الفئة الفرعية",
 "imageSubCategory": "صورة الفئة الفرعية",
-"categoryName":"اسم الفئة"
+"categoryName":"اسم الفئة",
+  "productName":"إسم المنتج",
+  "vendorName":"إسم التاجر",
+  "colors":"الألوان",
+  "price":"السعر",
+  "rating":"التقييم",
+  "stock":"المخزون",
+  "points":"النقاط",
+   "minQuantity":"اقل كمية",
+  "dimensionAndWeigh":"الوزن والابعاد",
+  "color":"اللون",
+  "discountPrice":"ثمن الخصم"
+  
 
 
 
@@ -111,10 +123,15 @@
   
     "addButtons":{ 
     "addVendor":"إضافة بائع",
-    "addCategory":"إضافة تصنيف"
+    "addCategory":"إضافة تصنيف",
+        "addProduct":"إضافة منتج",
+         "productInfo":"معلومات المنتج",
+    "productDetails":"تفاصيل المنتج"
+
   },
 "addTitles":{ 
-    "addNewVendor":"إضافة بائع جديد"
+    "addNewVendor":"إضافة بائع جديد",
+    "addNewProduct":"إضافة منتج جديد"
   }
 
 }

@@ -19,6 +19,7 @@ import Payments from "./pages/Payments";
 import Branches from "./pages/Branches";
 import VendorForm from "./features/vendor/VendorForm";
 import CategoryForm from "./features/categories/CategoryForm";
+import ProductForm from "./features/products/ProductForm";
 
 const protectedRoutes = [
   {
@@ -35,6 +36,8 @@ const protectedRoutes = [
       { path: "/categories/category-form", element: <CategoryForm /> },
 
       { path: "/products", element: <Products /> },
+      { path: "/products/product-form", element: <ProductForm /> },
+
       { path: "/orders", element: <Orders /> },
       { path: "/customers", element: <Customers /> },
       { path: "/ads", element: <Ads /> },

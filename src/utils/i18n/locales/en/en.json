@@ -100,26 +100,40 @@
   "bankAccount":"bank account",
   "commission":"commission",
   "subCategory":"sub category",
-  "imageSubCategory":"Sub Category Image"
+  "imageSubCategory":"Sub Category Image",
+  "productName":"product Name",
+  "colors":"colors",
+  "price":"price",
+  "rating":"rating",
+  "stock":"stock",
+  "points":"points",
+  "minQuantity":"minimum quantity",
+  "dimensionAndWeigh":"dimension And Weigh",
+  "color":"color",
+  "discountPrice":"discount Price"
   
   
  
   },
   "addButtons":{ 
     "addVendor":"Add Vendor",
-    "addCategory":"Add Category"
+    "addCategory":"Add Category",
+    "addProduct":"Add Product"
   },
   
   "groupInputHeader":{
     "basicInfo":"Basic info",
     "storeDetails":"Store details",
-    "financialSetting":"Financial Setting"
+    "financialSetting":"Financial Setting",
+    "productInfo":"Product info",
+    "productDetails":"Product Details"
     
   },
   
   
   "addTitles":{ 
-    "addNewVendor":"Add new vendor"
+    "addNewVendor":"Add new vendor",
+    "addNewProduct":"Add New Product"
   }
   
   

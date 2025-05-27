@@ -16,13 +16,16 @@ export const CATEGORIES_HEADS = [
   "type",
   "actions",
 ];
+
 export const PRODUCTS_HEADS = [
+  "productName",
   "vendorName",
-  "email",
-  "phoneNumber",
-  "numOfProdcuts",
-  "totalSales",
-  "date",
+  "category",
+  "colors",
+  "price",
+  "rating",
+  "stock",
+  "points",
   "status",
   "actions",
 ];
