@@ -1,17 +1,15 @@
+import { ADS_HEAdS } from "../../data/gridKeys";
+import { renderRow } from "../../ui/RenderRow";
 import GenericTable from "../../ui/table/GenericTable";
 import AdRow from "./AdRow";
-
-export const CLIENTS_HEADS = ["Title", "Status", "Created At", "Actions"];
-
-export const renderAdRow = (ad, index) => <AdRow ad={ad} key={index} />;
 
 function AdsTable() {
   return (
     <>
       <GenericTable
-        headers={CLIENTS_HEADS}
+        headers={ADS_HEAdS}
         data={[]}
-        renderRow={renderAdRow}
+        renderRow={renderRow(AdRow)}
         pageSize={20}
         resaultsCount={0}
         isLoading={false}

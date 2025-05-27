@@ -110,7 +110,21 @@
   "minQuantity":"minimum quantity",
   "dimensionAndWeigh":"dimension And Weigh",
   "color":"color",
-  "discountPrice":"discount Price"
+  "discountPrice":"discount Price",
+  "orderNumber":"order number",
+  "customerName":"customer name",
+  "orderDetails":"order details",
+  "totalAmount":"total amount",
+  "totalPoints":"Total Points",
+  "duration":"Duration",
+  "minimumOrderValue":"minimum order Value",
+  "expireTime":"expire Time",
+  "code":"code",
+  "discountDate":"discount Date"
+
+
+  
+  
   
   
  
@@ -118,7 +132,9 @@
   "addButtons":{ 
     "addVendor":"Add Vendor",
     "addCategory":"Add Category",
-    "addProduct":"Add Product"
+    "addProduct":"Add Product",
+    "addAd":"Add Ad",
+    "addCoupon":"Add Coupon"
   },
   
   "groupInputHeader":{
@@ -133,7 +149,9 @@
   
   "addTitles":{ 
     "addNewVendor":"Add new vendor",
-    "addNewProduct":"Add New Product"
+    "addNewProduct":"Add New Product",
+    "addNewAd":"Advertisment Mangement",
+    "addDiscountAndCoupon":"Add Discount And Coupon"
   }
   
   

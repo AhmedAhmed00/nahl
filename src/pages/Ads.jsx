@@ -25,9 +25,8 @@ function Ads() {
         <SearchInput />
 
         <TableOperations
-          setOpenModal={setOpenModal}
-          formType="modal"
-          addTitle={t("addButtons.addAdd")}
+          addPath={"/ads/ad-form"}
+          addTitle={t("addButtons.addAd")}
           filterComponent={
             <FilterSelect
               renderValue={language === "en" ? "name" : "nameAr"}

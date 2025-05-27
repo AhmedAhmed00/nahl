@@ -12,7 +12,7 @@ import Input from "../../ui/Input";
 import FileInput from "../../ui/FileInput";
 import Button from "../../ui/Button";
 
-function AdForm() {
+function DiscountsAndCouponsForm() {
   const { id, isEditingSession } = useDetectMode();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -35,31 +35,38 @@ function AdForm() {
   const validate = useValidate(errors);
   return (
     <>
-      <Section title={t("addTitles.addNewAd")}>
+      <Section title={t("addTitles.addDiscountAndCoupon")}>
         <Form>
           <InputsRow>
             <FormRow
-              error={validate("location")}
-              label={t("dataKeys.location")}
+              error={validate("discountDate")}
+              label={t("dataKeys.discountDate")}
             >
-              <Input {...register("location")} />
+              <Input {...register("discountDate")} />
             </FormRow>
+
             <FormRow
-              error={validate("duration")}
-              label={t("dataKeys.duration")}
+              error={validate("expireTime")}
+              label={t("dataKeys.expireTime")}
             >
-              <Input {...register("duration")} />
+              <Input {...register("expireTime")} />
             </FormRow>
           </InputsRow>
+
           <InputsRow>
-            <FormRow error={validate("image")} label={t("dataKeys.image")}>
-              <FileInput control={control} name="profilePic" />
+            <FormRow
+              error={validate("category")}
+              label={t("dataKeys.category")}
+            >
+              <Input {...register("category")} />
             </FormRow>
+            <FormRow></FormRow>
           </InputsRow>
+
           <Button isLoading={false} size="medium" $variation="primary">
             {isEditingSession
-              ? t("updateButtons.updateAd")
-              : t("addButtons.addAd")}
+              ? t("updateButtons.updateDiscount")
+              : t("addButtons.addCoupon")}
           </Button>
         </Form>
       </Section>
@@ -67,4 +74,4 @@ function AdForm() {
   );
 }
 
-export default AdForm;
+export default DiscountsAndCouponsForm;

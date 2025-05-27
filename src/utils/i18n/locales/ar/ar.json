@@ -106,7 +106,20 @@
    "minQuantity":"اقل كمية",
   "dimensionAndWeigh":"الوزن والابعاد",
   "color":"اللون",
-  "discountPrice":"ثمن الخصم"
+  "discountPrice":"ثمن الخصم",
+    "customerName":"إسم العميل",
+  "orderDetails":"تفاصيل الطلب",
+  "totalAmount":"الكمية",
+  "date":"التاريخ",
+  "numberOfProducts":"عدد المنتجات",
+  "totalPoints":"إجمالي النقاط",
+    "duration":"المدة",
+      "minimumOrderValue":"أقل قيمة للطلب",
+  "expireTime":"تاريخ الصلاحية",
+  "code":"الكود",
+  "discountDate":"تاريخ الخصم"
+
+
   
 
 
@@ -126,12 +139,18 @@
     "addCategory":"إضافة تصنيف",
         "addProduct":"إضافة منتج",
          "productInfo":"معلومات المنتج",
-    "productDetails":"تفاصيل المنتج"
+    "productDetails":"تفاصيل المنتج",
+        "addAd":"إضافة إعلان",
+        "addCoupon":"إضافة خصم"
+
 
   },
 "addTitles":{ 
     "addNewVendor":"إضافة بائع جديد",
-    "addNewProduct":"إضافة منتج جديد"
+    "addNewProduct":"إضافة منتج جديد",
+        "addNewAd":"إدارة الإعلانات",
+        "addDiscountAndCoupon":"إدارة الخصومات و الكوبونات"
+
   }
 
 }

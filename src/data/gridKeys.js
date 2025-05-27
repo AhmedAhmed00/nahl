@@ -40,7 +40,7 @@ export const ORDERS_HEADS = [
 ];
 export const CUSTOMERS_HEADS = [
   "customerName",
-  "Email",
+  "email",
   "numberOfProducts",
   "totalPoints",
   "status",

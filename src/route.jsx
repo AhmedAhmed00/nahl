@@ -20,6 +20,8 @@ import Branches from "./pages/Branches";
 import VendorForm from "./features/vendor/VendorForm";
 import CategoryForm from "./features/categories/CategoryForm";
 import ProductForm from "./features/products/ProductForm";
+import AdForm from "./features/ads/AdForm";
+import DiscountsAndCouponsForm from "./features/discounts-and-coupons/DiscountsAndCouponsForm";
 
 const protectedRoutes = [
   {
@@ -40,8 +42,15 @@ const protectedRoutes = [
 
       { path: "/orders", element: <Orders /> },
       { path: "/customers", element: <Customers /> },
+
       { path: "/ads", element: <Ads /> },
+      { path: "/ads/ad-form", element: <AdForm /> },
       { path: "/discounts-and-coupons", element: <DiscountsAndCoupons /> },
+
+      {
+        path: "/discounts-and-coupons/discount-and-coupon-form",
+        element: <DiscountsAndCouponsForm />,
+      },
       { path: "/reviews", element: <Reviews /> },
       { path: "/payments", element: <Payments /> },
       { path: "/branches", element: <Branches /> },
