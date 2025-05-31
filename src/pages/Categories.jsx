@@ -9,7 +9,8 @@ import SearchInput from "../ui/SearchInput";
 function Categories() {
   const { t } = useTranslation();
   return (
-    <Section title={t("routes.categories")}>
+    // <Section title={t("routes.categories")}>
+    <>
       <OperationsContainer>
         <SearchInput />
         <TableOperations
@@ -20,7 +21,8 @@ function Categories() {
       <Row>
         <CategoriesTable />
       </Row>
-    </Section>
+    </>
+    // </Section>
   );
 }
 export default Categories;

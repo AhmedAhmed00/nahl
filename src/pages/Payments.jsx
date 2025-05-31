@@ -9,7 +9,8 @@ import SearchInput from "../ui/SearchInput";
 function Payments() {
   const { t } = useTranslation();
   return (
-    <Section title={t("routes.payments")}>
+    // <Section title={t("routes.payments")}>
+    <>
       <OperationsContainer>
         <SearchInput />
         <TableOperations addTitle={"Add Review"} />
@@ -17,7 +18,7 @@ function Payments() {
       <Row>
         <PaymentsTable />
       </Row>
-    </Section>
+    </>
   );
 }
 export default Payments;

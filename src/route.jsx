@@ -26,6 +26,10 @@ import RolesAndEmployees from "./pages/RolesAndEmployees";
 
 import Employees from "./pages/EmployeesAndRoles/Employees";
 import JobRoles from "./pages/EmployeesAndRoles/JobRoles";
+import VendorDetails from "./pages/vendor-details/VendorDetails";
+import Profile from "./pages/vendor-details/Profile";
+import Groups from "./pages/Groups";
+import Clients from "./pages/Clients";
 
 const protectedRoutes = [
   {
@@ -36,6 +40,23 @@ const protectedRoutes = [
       { path: "dashboard", element: <Dash /> },
 
       { path: "/vendor", element: <Vendor /> },
+      {
+        path: "/vendor/:vendorId",
+        element: <VendorDetails />,
+        children: [
+          { index: true, element: <Navigate replace to="profile" /> },
+          { path: "profile", element: <Profile /> },
+          { path: "categories", element: <Categories /> },
+          { path: "products", element: <Products /> },
+          { path: "orders", element: <Orders /> },
+          { path: "groups", element: <Groups /> },
+          { path: "customers", element: <Customers /> },
+          { path: "ads", element: <Ads /> },
+          { path: "discounts", element: <DiscountsAndCoupons /> },
+          { path: "reviews", element: <Reviews /> },
+          { path: "payments", element: <Payments /> },
+        ],
+      },
       { path: "/vendor/vendor-form", element: <VendorForm /> },
 
       { path: "/categories", element: <Categories /> },

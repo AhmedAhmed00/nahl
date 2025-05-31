@@ -23,23 +23,23 @@ import { useLocation } from "react-router-dom";
 const navItems = [
   { path: "/dashboard", icon: <HiOutlineHome />, label: "dashboard" },
   { path: "/vendor", icon: <HiOutlineBuildingStorefront />, label: "vendor" },
-  { path: "/categories", icon: <HiOutlineTag />, label: "categories" },
-  { path: "/products", icon: <HiOutlineCube />, label: "products" },
-  { path: "/orders", icon: <HiOutlineShoppingCart />, label: "orders" },
-  { path: "/customers", icon: <HiOutlineUserGroup />, label: "customers" },
-  { path: "/ads", icon: <HiOutlineMegaphone />, label: "ads" },
-  {
-    path: "/discounts-and-coupons",
-    icon: <HiOutlineGift />,
-    label: "discountsAndCoupons",
-  },
+  // { path: "/categories", icon: <HiOutlineTag />, label: "categories" },
+  // { path: "/products", icon: <HiOutlineCube />, label: "products" },
+  // { path: "/orders", icon: <HiOutlineShoppingCart />, label: "orders" },
+  // { path: "/customers", icon: <HiOutlineUserGroup />, label: "customers" },
+  // { path: "/ads", icon: <HiOutlineMegaphone />, label: "ads" },
+  // {
+  //   path: "/discounts-and-coupons",
+  //   icon: <HiOutlineGift />,
+  //   label: "discountsAndCoupons",
+  // },
   {
     path: "/employees-and-roles",
     icon: <HiOutlineUserCircle />,
     label: "employeesAndRoles",
   },
-  { path: "/reviews", icon: <HiOutlineStar />, label: "reviews" },
-  { path: "/payments", icon: <HiOutlineCreditCard />, label: "payments" },
+  // { path: "/reviews", icon: <HiOutlineStar />, label: "reviews" },
+  // { path: "/payments", icon: <HiOutlineCreditCard />, label: "payments" },
   { path: "/branches", icon: <HiOutlineMapPin />, label: "branches" },
 ];
 

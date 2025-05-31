@@ -13,7 +13,7 @@ const sizes = {
   `,
   medium: css`
     font-size: 1.5rem;
-    min-width: 130px;
+    min-width: 125px;
     width: auto;
     padding: 0.8rem 1rem;
     font-weight: 500;

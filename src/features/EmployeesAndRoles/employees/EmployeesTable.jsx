@@ -2,12 +2,12 @@ import GenericTable from "../../../ui/table/GenericTable";
 import EmployeeRow from "./EmployeeRow";
 
 export const EMPLOYEES_HEADS = [
-  "Name",
-  "Email",
-  "Phone",
-  "Role",
-  "Status",
-  "Actions",
+  "name",
+  "email",
+  "phone",
+  "role",
+  "status",
+  "actions",
 ];
 
 export const renderEmployeeRow = (employee, index) => (

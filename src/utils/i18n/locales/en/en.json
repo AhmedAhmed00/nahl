@@ -18,18 +18,24 @@
 
   "routes":{ 
     "dashboard":"dashboard",
-    "vendor":"vendor",
-    "category":"category",
-    "products":"products",
-    "orders":"orders",
-    "customers":"customers",
-    "ads":"ads",
-    "discountsAndCoupons":"discounts and coupons",
-    "employeesAndRoles":"employees and roles",
-    "reviews":"reviews",
-    "payments":"payments",
-    "branches":"branches",
-      "categories":"categories"
+    "vendor":"Vendors",
+    "category":"Category",
+    "products":"Products",
+    "orders":"Orders",
+    "customers":"Customers",
+    "ads":"Ads",
+    "discountsAndCoupons":"Discounts and coupons",
+    "employeesAndRoles":"Employees and roles",
+    "reviews":"Reviews",
+    "payments":"Payments",
+    "branches":"Branches",
+      "categories":"Categories",
+      "vendorDetails":"Vendor Details",
+      "profile":"Profile",
+      "discounts":"Discounts",
+      "groups":"Groups",
+      "employees":"Employees",
+      "roles":"Roles"
 
   },
 
@@ -82,9 +88,9 @@
     "categoryType":"category Type",
     "jobRole":"job role",
     "role":"Role",
-      "vendorName": "Vendor Name",
-  "phoneNumber": "Phone Number",
-  "numOfProdcuts": "Number of Products",
+      "vendorName": "Name",
+  "phoneNumber": "Phone",
+  "numOfProdcuts": "count",
   "totalSales": "Total Sales",
   "date": "Date",
   "categoryName":"category Name",
@@ -120,7 +126,22 @@
   "minimumOrderValue":"minimum order Value",
   "expireTime":"expire Time",
   "code":"code",
-  "discountDate":"discount Date"
+  "discountDate":"discount Date",
+  "personalInfo":"Personal Info",
+  "groupName":"group name",
+  "transactionNumber":"transaction number",
+  "amount":"amount",
+  "reviewContent":"review Content",
+  "reviewedProduct":"reviewed Product",
+  "totalVendors":"Total Vendors",
+  "totalProducts":"Total Products",
+  "totalIncome":"Total Income",
+  
+  "filter":"Filter",
+  "export":"Export",
+  "pdf":"Export To PDF",
+  "excel":"Export to Excel"
+  
 
 
   
@@ -134,7 +155,8 @@
     "addCategory":"Add Category",
     "addProduct":"Add Product",
     "addAd":"Add Ad",
-    "addCoupon":"Add Coupon"
+    "addCoupon":"Add Coupon",
+    "addGroup":"Add Group"
   },
   
   "groupInputHeader":{

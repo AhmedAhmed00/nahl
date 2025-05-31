@@ -20,7 +20,8 @@ function Ads() {
   const { t, i18n: { language } = {} } = useTranslation();
 
   return (
-    <Section title={t("routes.ads")}>
+    // <Section title={t("routes.ads")}>
+    <>
       <OperationsContainer>
         <SearchInput />
 
@@ -56,7 +57,7 @@ function Ads() {
           />,
           document.body
         )} */}
-    </Section>
+    </>
   );
 }
 

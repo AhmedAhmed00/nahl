@@ -5,5 +5,4 @@ export const OperationsContainer = styled.div`
   grid-template-columns: 1fr auto auto;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
 `;

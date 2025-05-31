@@ -21,16 +21,16 @@ const StyledIndex = styled.p`
 `;
 
 const StyledRowWrapper = styled.div`
-  margin-block: 20px;
+  margin-block: ${(props) => (props.margin ? props.margin : "20px")};
 
   &:first-child {
     margin-top: 0;
   }
 `;
 
-export default function InputsHeader({ index, head }) {
+export default function InputsHeader({ index, head, margin }) {
   return (
-    <StyledRowWrapper>
+    <StyledRowWrapper margin={margin}>
       <Row
         items="center"
         justify="center"

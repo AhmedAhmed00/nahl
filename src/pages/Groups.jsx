@@ -1,25 +1,28 @@
-import OrdersTable from "../features/orders/OrdersTable";
 import { Section } from "../ui/Container";
 import { OperationsContainer } from "../ui/OperationsContainer";
 import Row from "../ui/Row";
 import { useTranslation } from "react-i18next";
-import SearchInput from "../ui/SearchInput";
 import TableOperations from "../ui/table/TableOperations";
+import SearchInput from "../ui/SearchInput";
+import GroupsTable from "../features/groups/GroupsTable";
 
-function Orders() {
+function Groups() {
   const { t } = useTranslation();
   return (
-    // <Section title={t("routes.orders")}>
+    // <Section title={t("routes.groups")}>
     <>
       <OperationsContainer>
         <SearchInput />
-        <TableOperations />
+        <TableOperations
+          addPath={"/groups/groups-form"}
+          addTitle={t("addButtons.addGroup")}
+        />
       </OperationsContainer>
       <Row>
-        <OrdersTable />
+        <GroupsTable />
       </Row>
-      {/* </Section> */}
     </>
+    // </Section>
   );
 }
-export default Orders;
+export default Groups;

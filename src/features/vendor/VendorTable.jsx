@@ -6,11 +6,11 @@ import { VENDOR_HEADS } from "../../data/gridKeys";
 function VendorTable() {
   const data = [
     {
-      vendorName: "test",
+      vendorName: "Click to test",
       email: "devahmed@gmail.com",
       phoneNumber: "01115012004",
       numberOfProducts: "30",
-      totalSalse: 90,
+      totalSales: 90,
       date: new Date().getFullYear(),
       status: "active",
     },

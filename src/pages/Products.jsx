@@ -9,7 +9,8 @@ import SearchInput from "../ui/SearchInput";
 function Products() {
   const { t } = useTranslation();
   return (
-    <Section title={t("routes.products")}>
+    // <Section title={t("routes.products")}>
+    <>
       <OperationsContainer>
         <SearchInput />
         <TableOperations
@@ -20,7 +21,8 @@ function Products() {
       <Row>
         <ProductsTable />
       </Row>
-    </Section>
+    </>
+    // </Section>
   );
 }
 

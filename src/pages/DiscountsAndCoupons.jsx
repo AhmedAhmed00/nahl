@@ -9,7 +9,8 @@ import SearchInput from "../ui/SearchInput";
 function DiscountsAndCoupons() {
   const { t } = useTranslation();
   return (
-    <Section title={t("routes.discountsAndCoupons")}>
+    // <Section title={t("routes.discountsAndCoupons")}>
+    <>
       <OperationsContainer>
         <SearchInput />
         <TableOperations
@@ -20,7 +21,7 @@ function DiscountsAndCoupons() {
       <Row>
         <DiscountsAndCouponsTable />
       </Row>
-    </Section>
+    </>
   );
 }
 export default DiscountsAndCoupons;

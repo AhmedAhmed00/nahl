@@ -69,9 +69,11 @@ export const PAYMENT_HEADS = [
   "customerName",
   "transactionNumber",
   "amount",
-  "paymentsMethod",
+  "paymentMethod",
   "date",
   "status",
   "actions",
 ];
 export const BRANCHES_HEADS = ["branchID", "branchName", "address", "actions"];
+
+export const GROUPS_HEADS = ["groupName", "actions"];

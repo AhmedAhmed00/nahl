@@ -30,15 +30,6 @@ export function ClientsTable() {
 
   return (
     <>
-      <Row
-        type="horizontal"
-        gap={"14px"}
-        justify="space-between"
-        align="center"
-      >
-        <TableOperations setOpenModal={setOpenModal} addPath={""} />
-      </Row>
-
       <GenericTable
         headers={CLIENTS_HEADS}
         data={rowsData}

@@ -1,14 +1,6 @@
 import GenericTable from "../../../ui/table/GenericTable";
+import { EMPLOYEES_HEADS } from "../../EmployeesAndRoles/employees/EmployeesTable";
 import EmployeeRow from "./EmployeeRow";
-
-export const EMPLOYEES_HEADS = [
-  "Name",
-  "Email",
-  "Phone",
-  "Role",
-  "Status",
-  "Actions",
-];
 
 export const renderEmployeeRow = (employee, index) => (
   <EmployeeRow employee={employee} key={index} />

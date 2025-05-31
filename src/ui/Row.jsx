@@ -8,6 +8,7 @@ const Row = styled.div`
   flex-wrap: ${(props) => (props.wrap ? props.wrap : "nowrap")};
   gap: ${(props) => (props.$gap ? props.$gap : "")};
   margin: ${(props) => (props.$margin ? props.$margin : "")};
+  padding: ${(props) => (props.$padding ? props.$padding : "")};
   align-self: ${(props) => (props.alignSelf ? props.alignSelf : "stretch")};
 
   ${(props) =>

@@ -16,7 +16,8 @@ function Reviews() {
   const { t, i18n: { language } = {} } = useTranslation();
 
   return (
-    <Section title={t("routes.reviews")}>
+    <>
+      {/* <Section title={t("routes.reviews")}> */}
       <OperationsContainer>
         <SearchInput />
 
@@ -30,7 +31,7 @@ function Reviews() {
       <Row>
         <ReviewsTable />
       </Row>
-    </Section>
+    </>
   );
 }
 

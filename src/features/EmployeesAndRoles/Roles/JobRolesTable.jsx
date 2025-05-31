@@ -1,7 +1,7 @@
 import GenericTable from "../../../ui/table/GenericTable";
 import JobRoleRow from "./JobRoleRow";
 
-export const JOB_ROLES_HEADS = ["Name", "created At", "Actions"];
+export const JOB_ROLES_HEADS = ["name", "created at", "actions"];
 
 export const renderJobRow = (jobRole, index) => (
   <JobRoleRow jobRole={jobRole} key={index} />

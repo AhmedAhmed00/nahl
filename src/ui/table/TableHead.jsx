@@ -5,5 +5,6 @@ export const TableHead = styled.p`
   font-weight: 700;
   text-align: start;
   font-size: 16px;
+  text-wrap: balance;
   line-height: 20px;
 `;

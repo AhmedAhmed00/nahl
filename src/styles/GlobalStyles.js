@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
 :root {
   /* Indigo */
   --color-primary:#7F82BE ;
-  --color-secondary:
+  --color-secondary:#F2A94DCC;
   --color-light: #F9F9F9 ;
   --color-grey: #888888 ;
   --color-text:#212121;
@@ -69,7 +69,7 @@ const GlobalStyles = createGlobalStyle`
   margin: 0;
 
   /* Creating animations for dark mode */
-  transition: background-color 0.3s, border 0.3s;
+  ${"" /* transition: background-color 0.3s, border 0.3s; */}
 }
 
 input[type="number"]::-webkit-outer-spin-button,

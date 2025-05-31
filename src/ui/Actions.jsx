@@ -126,7 +126,7 @@ function Actions({
       <div style={{ paddingRight: "10px" }}>
         <Row
           justify="start"
-          gap="8px"
+          $gap="8px"
           type="horizontal"
           style={{ position: "relative" }}
         >
