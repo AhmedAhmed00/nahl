@@ -23,8 +23,7 @@ import ProductForm from "./features/products/ProductForm";
 import AdForm from "./features/ads/AdForm";
 import DiscountsAndCouponsForm from "./features/discounts-and-coupons/DiscountsAndCouponsForm";
 import RolesAndEmployees from "./pages/RolesAndEmployees";
-import EmployeesTable from "./features/EmployeesAndRoles/employees/EmployeesTable";
-import JobRolesTable from "./features/EmployeesAndRoles/roles/JobRolesTable";
+
 import Employees from "./pages/EmployeesAndRoles/Employees";
 import JobRoles from "./pages/EmployeesAndRoles/JobRoles";
 
