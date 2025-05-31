@@ -10,7 +10,7 @@ import AppLayout from "./ui/layout/AppLayout";
 import Vendor from "./pages/Vendor";
 import Categories from "./pages/Categories";
 import Products from "./pages/Products";
-import Orders from "./pages/orders";
+import Orders from "./pages/Orders";
 import Customers from "./pages/Customers";
 import Ads from "./pages/Ads";
 import DiscountsAndCoupons from "./pages/DiscountsAndCoupons";
