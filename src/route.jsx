@@ -22,6 +22,11 @@ import CategoryForm from "./features/categories/CategoryForm";
 import ProductForm from "./features/products/ProductForm";
 import AdForm from "./features/ads/AdForm";
 import DiscountsAndCouponsForm from "./features/discounts-and-coupons/DiscountsAndCouponsForm";
+import RolesAndEmployees from "./pages/RolesAndEmployees";
+import EmployeesTable from "./features/EmployeesAndRoles/employees/EmployeesTable";
+import JobRolesTable from "./features/EmployeesAndRoles/roles/JobRolesTable";
+import Employees from "./pages/EmployeesAndRoles/Employees";
+import JobRoles from "./pages/EmployeesAndRoles/JobRoles";
 
 const protectedRoutes = [
   {
@@ -51,6 +56,22 @@ const protectedRoutes = [
         path: "/discounts-and-coupons/discount-and-coupon-form",
         element: <DiscountsAndCouponsForm />,
       },
+
+      {
+        path: "/employees-and-roles",
+        element: <RolesAndEmployees />,
+        children: [
+          { index: true, element: <Navigate replace to="employees" /> },
+
+          { path: "employees", element: <Employees /> },
+          { path: "job-roles", element: <JobRoles /> },
+        ],
+      },
+      {
+        path: "/employees-and-roles/employees",
+        element: <RolesAndEmployees />,
+      },
+
       { path: "/reviews", element: <Reviews /> },
       { path: "/payments", element: <Payments /> },
       { path: "/branches", element: <Branches /> },

@@ -5,13 +5,13 @@ const TabLinks = styled.ul`
   display: flex;
   gap: 15px;
   align-items: center;
-  margin-bottom: 1px;
+  margin-bottom: 12px;
 `;
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: #888888;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 600;
 
   &.active {
     color: var(--color-primary);

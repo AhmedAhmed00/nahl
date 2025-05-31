@@ -19,6 +19,7 @@ import { useAuth } from "../../context/AuthContext";
 import { CiLogout } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
 import { NavList } from "../NavList";
+import { useLocation } from "react-router-dom";
 const navItems = [
   { path: "/dashboard", icon: <HiOutlineHome />, label: "dashboard" },
   { path: "/vendor", icon: <HiOutlineBuildingStorefront />, label: "vendor" },
@@ -33,7 +34,7 @@ const navItems = [
     label: "discountsAndCoupons",
   },
   {
-    path: "/employee-and-roles",
+    path: "/employees-and-roles",
     icon: <HiOutlineUserCircle />,
     label: "employeesAndRoles",
   },
@@ -43,7 +44,6 @@ const navItems = [
 ];
 
 function MainNav() {
-  console.log("probleeeem");
   const { logout } = useAuth();
   const { t } = useTranslation();
   return (
