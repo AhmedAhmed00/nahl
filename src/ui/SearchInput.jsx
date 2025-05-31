@@ -47,7 +47,7 @@ export default function SearchInput() {
       </Icon>
       <SearchInputStyle
         $isRTL={isRTL}
-        placeholder={isRTL ? "علي ما تبحث ؟" : "What are you looking for...?"}
+        placeholder={isRTL ? "إبحث ؟" : "What are you looking for...?"}
         onChange={(e) => handleFilter({ search: e.target.value })}
       />
     </Wrapper>

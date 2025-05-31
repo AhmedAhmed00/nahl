@@ -40,7 +40,7 @@ const navItems = [
   },
   // { path: "/reviews", icon: <HiOutlineStar />, label: "reviews" },
   // { path: "/payments", icon: <HiOutlineCreditCard />, label: "payments" },
-  { path: "/branches", icon: <HiOutlineMapPin />, label: "branches" },
+  // { path: "/branches", icon: <HiOutlineMapPin />, label: "branches" },
 ];
 
 function MainNav() {

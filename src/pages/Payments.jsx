@@ -9,11 +9,10 @@ import SearchInput from "../ui/SearchInput";
 function Payments() {
   const { t } = useTranslation();
   return (
-    // <Section title={t("routes.payments")}>
     <>
       <OperationsContainer>
         <SearchInput />
-        <TableOperations addTitle={"Add Review"} />
+        <TableOperations />
       </OperationsContainer>
       <Row>
         <PaymentsTable />

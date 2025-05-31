@@ -11,8 +11,6 @@ import ReviewsTable from "../features/reviews/ReviewsTable";
 // Styled Select with placeholder
 
 function Reviews() {
-  const { handleClose, isClosing, setIsClosing, openModal, setOpenModal } =
-    useModal();
   const { t, i18n: { language } = {} } = useTranslation();
 
   return (
@@ -21,11 +19,7 @@ function Reviews() {
       <OperationsContainer>
         <SearchInput />
 
-        <TableOperations
-          setOpenModal={setOpenModal}
-          formType="modal"
-          addTitle={t("addButtons.test")}
-        />
+        <TableOperations />
       </OperationsContainer>
 
       <Row>

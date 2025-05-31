@@ -103,7 +103,7 @@ export default function TableOperations({
             onClose={handleClose}
             handleClose={handleClose}
           >
-            <Form onSubmit={submitFilter}>
+            <Form type="filter" onSubmit={submitFilter}>
               {filterInputs}
               <FilterButtons handleClose={handleClose} />
             </Form>

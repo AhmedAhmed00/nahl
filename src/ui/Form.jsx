@@ -4,17 +4,23 @@ const Form = styled.form`
   min-height: 100%;
   & button {
     margin-top: 24px;
-    margin-right: auto;
-    display: block;
   }
+
+  ${(props) =>
+    props.type !== "filter" &&
+    css`
+      & button {
+        margin-top: 24px;
+        margin-right: auto;
+        display: block;
+      }
+    `}
+
   ${(props) =>
     props.type !== "modal" &&
     css`
-      /* padding: 2.4rem 4rem; */
       padding: 20px 25px;
       padding-top: 30px;
-
-      /* Box */
       background-color: var(--color-grey-0);
       border-radius: var(--border-radius-md);
     `}
@@ -24,7 +30,6 @@ const Form = styled.form`
     css`
       width: 80rem;
     `}
-    
 
   font-size: 1.45rem;
 `;

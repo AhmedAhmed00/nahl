@@ -141,7 +141,9 @@
     "productDetails": "تفاصيل المنتج",
     "addAd": "إضافة إعلان",
     "addCoupon": "إضافة خصم",
-    "addGroup": "إضافة مجموعة"
+    "addGroup": "إضافة مجموعة",
+    "addEmployee":"إضافة موظف", 
+    "addRole":"إضافة وظيفة"
   },
   "addTitles": {
     "addNewVendor": "إضافة بائع جديد",

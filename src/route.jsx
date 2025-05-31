@@ -94,7 +94,7 @@ const protectedRoutes = [
 
       { path: "/reviews", element: <Reviews /> },
       { path: "/payments", element: <Payments /> },
-      { path: "/branches", element: <Branches /> },
+      // { path: "/branches", element: <Branches /> },
 
       // Management
       // {

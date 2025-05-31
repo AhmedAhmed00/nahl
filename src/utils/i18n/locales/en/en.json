@@ -5,7 +5,9 @@
     "next":"Next",
     "update":"Update",
     "login":"login",
-    "logout":"logout"
+    "logout":"logout",
+    "cancel":"Cancel",
+    "apply":"Apply"
   },
   
   "dashboard":{ 
@@ -156,7 +158,9 @@
     "addProduct":"Add Product",
     "addAd":"Add Ad",
     "addCoupon":"Add Coupon",
-    "addGroup":"Add Group"
+    "addGroup":"Add Group",
+    "addEmployee":"Add Employee",
+    "addRole":"ِAdd Role"
   },
   
   "groupInputHeader":{

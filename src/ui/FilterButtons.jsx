@@ -1,16 +1,18 @@
+import { useTranslation } from "react-i18next";
 import Button from "./Button";
 import Row from "./Row";
 
 export default function FilterButtons({ handleClose }) {
+  const { t } = useTranslation();
   return (
-    <Row margin="20px 0 0 0" type="horizontal" justify="start" $gap="15px">
+    <Row margin="20px 0 0 0" type="horizontal" justify="start" $gap="22px">
       <Button
         onClick={handleClose}
         type="button"
         size="medium"
         variation="secondary"
       >
-        إلغاء
+        {t("common.cancel")}
       </Button>
       <Button
         onClick={handleClose}
@@ -18,7 +20,7 @@ export default function FilterButtons({ handleClose }) {
         size="medium"
         variation="primary"
       >
-        تصفية
+        {t("common.apply")}
       </Button>
     </Row>
   );

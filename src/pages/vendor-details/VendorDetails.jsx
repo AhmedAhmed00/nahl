@@ -24,5 +24,5 @@ export const TableLayoutStyles = {
   border: "1px solid var(--color-grey-300)",
   borderRadius: "10px",
   padding: "18px 18px",
-  marginTop: "30px",
+  marginTop: "20px",
 };
