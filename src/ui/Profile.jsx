@@ -365,6 +365,7 @@ const Profile = ({ size }) => {
             color: isPopupOpen ? "#ffffff" : "#d4dbdb",
             transition: "color 0.2s ease",
           }}
+          cursor={"pointer"}
           size={size}
         />
         {isPopupOpen && (
