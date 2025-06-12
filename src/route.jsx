@@ -15,7 +15,7 @@ import VerficationCode from "./pages/VerficationCode";
 import Register from "./pages/Register";
 import Lessons from "./pages/lessons/Lessons";
 import InteractiveQuestions from "./pages/lessons/InteractiveQuestions";
-import Videos from "./pages/lessons/videos";
+import Videos from "./pages/lessons/Videos";
 import PastExams from "./pages/lessons/PastExams";
 import Summaries from "./pages/lessons/Summaries";
 
