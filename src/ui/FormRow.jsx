@@ -11,7 +11,7 @@ const StyledFormRow = styled.div`
   gap: ${(props) => (props.orientation === "vertical" ? "0.8rem" : "2.4rem")};
 
   padding: ${(props) =>
-    props.orientation === "vertical" ? "0 0" : "1.2rem 0"};
+    props.orientation === "vertical" ? "0.7rem 0" : "1.2rem 0"};
 
   &:first-child {
     padding-top: 0;
@@ -41,12 +41,13 @@ const StyledFormRow = styled.div`
 
 const Label = styled.label`
   font-weight: 500;
+  color: var(--color-light);
 `;
 
 export const Error = styled.span`
   display: block;
-  margin-bottom: ${(props) => props.mb || "5px"};
-  font-size: ${(props) => props.fs || "1.2rem;"};
+  margin-bottom: ${(props) => props.mb || "0"};
+  font-size: ${(props) => props.fs || "1.1rem;"};
   color: var(--color-red-700);
 `;
 

@@ -9,15 +9,12 @@ import { loginschema } from "./loginSchema";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { StyledPhoneInput } from "../../ui/PhoneNumbers";
-import Logo from "../../ui/Logo";
+import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
 import { t } from "i18next";
 
-const LogoContainer = styled.div`
-  width: 300px;
-  height: 250px;
-  justify-contnet: center;
-  margin: auto;
+const Profile = styled.div`
+  height: 150px;
 `;
 
 function LoginForm() {
@@ -43,40 +40,54 @@ function LoginForm() {
   }
 
   return (
-    <>
-      <LogoContainer>
-        <Logo />
-      </LogoContainer>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <FormRow label={t("dataKeys.phone")}>
+    <div
+      style={{
+        display: "grid",
+        placeContent: "center",
+        gridTemplateColumns: "38rem",
+      }}
+    >
+      <Form
+        style={{
+          backgroundColor: "var(--color-brand-1)",
+          borderRadius: "35px",
+        }}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <Profile>
+          <BsPerson
+            style={{
+              display: "block",
+              margin: "auto",
+              color: "#d4dbdb",
+            }}
+            size={170}
+          />
+        </Profile>
+
+        <FormRow label={"رقم الهاتف"}>
           <Controller
-            name="phone"
+            name="phone_number"
             control={control}
-            render={({ field }) => <StyledPhoneInput country="eg" {...field} />}
+            render={({ field }) => <StyledPhoneInput country="ly" {...field} />}
           />
         </FormRow>
 
-        {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
-        <div style={{ marginTop: "20px" }}></div>
-
-        <FormRow label={t("dataKeys.password")} orientation="vertical">
+        <FormRow label={"الرقم السري"} orientation="vertical">
           <Input type="password" id="password" {...register("password")} />
         </FormRow>
 
-        {errors.password && (
-          <p className="text-red-500">{errors.password.message}</p>
-        )}
         <FormRow>
           <Button
             isLoading={isLoading}
             style={{ marginTop: "25px" }}
             size="large"
           >
-            {t("common.login")}
+            تسجيل الدخول
           </Button>
         </FormRow>
       </Form>
-    </>
+    </div>
   );
 }
 

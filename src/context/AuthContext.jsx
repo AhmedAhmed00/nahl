@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext(null);
 
@@ -9,17 +10,40 @@ export default function AuthProvider({ children }) {
     localStorage.getItem("accessToken") || null
   );
   const [isLoading, setIsLoading] = useState(false);
+  const [isVerfied, setIsVerfied] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
     if (token) setAccessToken(token);
   }, []);
 
+  async function signUp(data) {
+    try {
+      setIsLoading(true);
+      const resData = await axios.post(
+        "https://studentapp.pythonanywhere.com/en/core/register/",
+        data
+      );
+      // 201114023004;
+
+      toast.success("تم تسجيل الحساب بنجاح");
+      navigate("/auth/login");
+    } catch (err) {
+      if (err.response?.status === 401)
+        toast.error("من فضلك ادخل بيانات صحيحة");
+      else {
+        toast.error("خطأ في الخادم");
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  }
   async function login(data) {
     try {
       setIsLoading(true);
       const resData = await axios.post(
-        "https://shetak-v2.cyparta.com/core/login/",
+        "https://studentapp.pythonanywhere.com/en/core/login/",
         data
       );
 
@@ -48,7 +72,16 @@ export default function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ accessToken, setAccessToken, logout, login, isLoading }}
+      value={{
+        accessToken,
+        setAccessToken,
+        setIsVerfied,
+        isVerfied,
+        logout,
+        signUp,
+        login,
+        isLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

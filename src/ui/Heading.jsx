@@ -10,6 +10,11 @@ const Heading = styled.h1`
       color: var(--color-primary);
     `}
   ${(props) =>
+    props.color === "light" &&
+    css`
+      color: var(--color-light);
+    `}
+  ${(props) =>
     props.color === "red" &&
     css`
       color: var(--color-red-800);
@@ -18,14 +23,14 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === "h1" &&
     css`
-      font-size: 3rem;
+      font-size: 5rem;
       font-weight: 600;
     `}
 
   ${(props) =>
     props.as === "h2" &&
     css`
-      font-size: 2.2rem;
+      font-size: 2.7rem;
       font-weight: 600;
     `}
     

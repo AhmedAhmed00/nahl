@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const Form = styled.form`
-  min-height: 100%;
+  height: 100%;
   & button {
     margin-top: 24px;
   }
@@ -19,7 +19,8 @@ const Form = styled.form`
   ${(props) =>
     props.type !== "modal" &&
     css`
-      padding: 20px 25px;
+      padding-inline: 36px;
+      padding-block: 0px 60px;
       padding-top: 30px;
       background-color: var(--color-grey-0);
       border-radius: var(--border-radius-md);

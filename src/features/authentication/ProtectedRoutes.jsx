@@ -25,9 +25,9 @@ export default function ProtectedRoutes() {
     if (storedToken && !isTokenValid(storedToken)) {
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
-      navigate("/login");
+      navigate("/auth");
     }
   }, [accessToken, navigate]);
 
-  return isTokenValid(storedToken) ? <Outlet /> : <Navigate to="/login" />;
+  return isTokenValid(storedToken) ? <Outlet /> : <Navigate to="/auth" />;
 }

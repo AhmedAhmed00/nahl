@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import LoginForm from "../features/authentication/LoginForm";
+import AuthOptions from "./AuthOptions";
 
 const LoginLayout = styled.main`
   min-height: 100vh;
@@ -9,12 +10,12 @@ const LoginLayout = styled.main`
   justify-content: center;
 `;
 
-function Login() {
+function Auth() {
   return (
     <LoginLayout>
-      <LoginForm />
+      <AuthOptions />
     </LoginLayout>
   );
 }
 
-export default Login;
+export default Auth;

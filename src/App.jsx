@@ -1,4 +1,4 @@
-import { BrowserRouter, useRoutes } from "react-router-dom";
+import { BrowserRouter, useLocation, useRoutes } from "react-router-dom";
 
 import GlobalStyles from "./styles/GlobalStyles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -13,15 +13,7 @@ import CityProvider from "./context/SelectedCityContext";
 import { protectedRoutes, publicRoutes } from "./route";
 import ProtectedRoutes from "./features/authentication/ProtectedRoutes";
 import SpecProvider from "./context/SelectedSubSpecContext";
-import { ThemeProvider } from "styled-components";
-import { useTranslation } from "react-i18next";
-
-const rtl = {
-  direction: "rtl",
-};
-const ltr = {
-  direction: "ltr",
-};
+import { AnimatePresence } from "framer-motion";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,22 +25,29 @@ const queryClient = new QueryClient({
 });
 
 function AppRoutes() {
-  const routes = useRoutes([
-    {
-      element: <ProtectedRoutes />,
-      children: protectedRoutes,
-    },
-    ...publicRoutes,
-  ]);
+  const location = useLocation();
 
-  return routes;
+  const routes = useRoutes(
+    [
+      {
+        element: <ProtectedRoutes />,
+        children: protectedRoutes,
+      },
+      ...publicRoutes,
+    ],
+    location
+  );
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <div key={location.pathname}>{routes}</div>
+    </AnimatePresence>
+  );
 }
 
 function App() {
-  const { i18n: { language } = {} } = useTranslation();
-  const currentDir = language === "ar" ? rtl : ltr;
   return (
-    <ThemeProvider theme={currentDir}>
+    <>
       <GlobalStyles />
       <QueryClientProvider client={queryClient}>
         <Toaster position="top-center" />
@@ -65,7 +64,7 @@ function App() {
           </BrowserRouter>
         </Suspense>
       </QueryClientProvider>
-    </ThemeProvider>
+    </>
   );
 }
 

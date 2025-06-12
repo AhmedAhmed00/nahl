@@ -1,0 +1,94 @@
+import { BsPerson } from "react-icons/bs";
+import { Profile } from "../ui/AuthContainer";
+import { Container } from "../ui/Container";
+import NavigateCard from "../ui/NavigateCard";
+import Row from "../ui/Row";
+import { StyledTopHeader } from "../ui/TopHeader";
+import Heading from "../ui/Heading";
+import { motion } from "framer-motion";
+import AnimatedBlockList from "../ui/AnimatedCards";
+import { useParams } from "react-router-dom";
+
+const cardVariants = {
+  hidden: (index) => ({
+    opacity: 0,
+    scale: 0.5,
+    y: -50 * (index + 1), // staggered vertical offset
+  }),
+  visible: (index) => ({
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.1, // stagger delay
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+  exit: {
+    opacity: 0,
+    scale: 0.5,
+    y: 50,
+    transition: { duration: 0.3 },
+  },
+};
+
+export default function GradeContents() {
+  const { grade } = useParams();
+  const blocks = [
+    { id: 1, title: "منهاج", to: `/subjects?grade=${grade}&type=lessons` },
+    {
+      id: 2,
+      title: "تفاعلية أسئلة",
+      to: `/subjects?grade=${grade}&type=interactive-questions`,
+    },
+    { id: 4, title: "فيديوهات", to: `/subjects?grade=${grade}&type=videos` },
+    {
+      id: 5,
+      title: "إمتحانات سابقة",
+      to: `/subjects?grade=${grade}&type=past-exams`,
+    },
+    { id: 6, title: "ملخصات", to: `/subjects?grade=${grade}&type=summaries` },
+  ];
+
+  console.log(grade);
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
+      <Container>
+        <StyledTopHeader>
+          <Profile>
+            <BsPerson
+              style={{
+                display: "block",
+                color: "#d4dbdb",
+              }}
+              size={70}
+            />
+          </Profile>
+          <div>
+            <Heading color="light" as={"h1"}>
+              منصة نهل أكاديمي
+            </Heading>
+          </div>
+          <div /> {/* Empty right column to balance the layout */}
+        </StyledTopHeader>
+
+        <Row
+          style={{
+            padding: "20px 70px",
+          }}
+          $margin="70px 0px"
+          type="horizontal"
+          justify="space-between"
+        >
+          <AnimatedBlockList key={blocks.length} blocks={blocks} />
+        </Row>
+      </Container>
+    </motion.div>
+  );
+}

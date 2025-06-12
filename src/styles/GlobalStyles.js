@@ -5,7 +5,9 @@ const GlobalStyles = createGlobalStyle`
   /* Indigo */
   --color-primary:#7F82BE ;
   --color-secondary:#F2A94DCC;
-  --color-light: #F9F9F9 ;
+  --color-brand-1:#202f95;
+  --color-light:#dddad8;
+
   --color-grey: #888888 ;
   --color-text:#212121;
   --color-brand-50: #eef2ff;
@@ -78,13 +80,10 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
   html {
-    font-size: 62.5%;
-    direction: ${({ theme }) => theme.direction || "ltr"};
-    font-family: ${({ theme }) =>
-      theme.direction === "rtl"
-        ? '"Cairo", sans-serif'
-        : '"Montserrat", sans-serif'};
-  }
+    font-size: 68.5%;
+    direction: rtl;
+    font-family: "Playpen Sans Arabic", cursive;
+
 /* Width and height of the scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -108,15 +107,26 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 body {
-
-
-
+  position: relative;
   color: var(--color-grey-700);
- background-color: #F9F9F9; 
+  background-image: linear-gradient(to right, #0543ab, #4d4cbe, #7955d0, #a25de0, #cb64ed);
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+}
+
+body::before {
+  content: "نَهل";
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22rem; /* Adjust size as needed */
+  color: rgba(255, 255, 255, 0.1); 
+  pointer-events: none; /* Prevents it from interfering with clicks */
+  z-index: 0;
+  white-space: nowrap;
 }
 
 input,
@@ -203,7 +213,9 @@ img {
   border: 1px solid var(--color-grey-300);
   background-color: var(--color-grey-0);
   border-radius: var(--border-radius-sm);
-  padding: ${({ theme }) => (theme.direction === "ltr" ? "0 0 0 7.2rem !important" : "")};
+  ${"" /* padding: ${({ theme }) => (theme.direction === "ltr" ? "0 0 0 7.2rem !important" : "")}; */}
+  
+  
   box-shadow: var(--shadow-sm);
 }
 

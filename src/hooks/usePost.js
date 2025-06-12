@@ -14,19 +14,18 @@ export default function usePost({ service, resourse, key }) {
     mutationFn: service,
 
     onSuccess: () => {
-      toast.dismiss(loadingToastId);
+      // toast.dismiss(loadingToastId);
       queryClient.invalidateQueries({
         queryKey: [key],
       });
-      toast.success(`${resourse} added successfully`);
+      // toast.success(`${resourse} added successfully`);
     },
 
     onError: (err) => {
-      const errMsg = err?.statusText
-        ? `${err?.statusText} \n Cannot add ${resourse}`
-        : `Cannot add ${resourse}`;
-
-      toast.error(errMsg);
+      // const errMsg = err?.statusText
+      //   ? `${err?.statusText} \n Cannot add ${resourse}`
+      //   : `Cannot add ${resourse}`;
+      // toast.error(errMsg);
     },
   });
   return { mutate, isErrorAdding, data, addingStatus };

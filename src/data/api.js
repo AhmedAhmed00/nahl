@@ -1,11 +1,9 @@
 import axios from "axios";
-import { apiRequest } from "../services/apiCities";
+import Lessons from "../pages/lessons/Lessons";
 
-const BASEURL = "https://shetak-v2.cyparta.com";
+const BASEURL = "https://studentapp.pythonanywhere.com/en/";
 
 export const api = axios.create({ baseURL: BASEURL });
-
-// api.defaults.headers.common["Content-Type"] = "application/json";
 
 api.interceptors.request.use(
   async (config) => {
@@ -47,7 +45,7 @@ api.interceptors.response.use(
         refreshRequest = null;
         localStorage.removeItem("accessToken");
         localStorage.removeItem("refreshToken");
-        window.location.href = "/login";
+        window.location.href = "/auth";
         return Promise.reject(refreshError);
       }
     }
@@ -97,64 +95,42 @@ export function createService(baseUrl) {
   };
 }
 
+/**
+ * Generic API request handler
+ * @param {string} method - HTTP method (get, post, delete, patch)
+ * @param {string} url - API endpoint
+ * @param {object} [data=null] - Request body (optional)
+ * @returns {Promise<any>}
+ */
+
+export async function apiRequest(method, url, data = null) {
+  console.log(data, "data in apiRequest");
+  try {
+    const res = await api[method](url, data);
+    return res.data;
+  } catch (error) {
+    console.error(`Error in ${method.toUpperCase()} ${url}:`, error);
+    throw error.response || new Error("Unknown error occurred");
+  }
+}
+
 // API Endpoints
-export const CITIES = `/core/cities/`;
-export const REGIONS = `/core/regions/`;
-export const SPECIALIZATIONS = `/core/specializations/`;
-export const SUP_SPECIALIZATIONS = `/core/sub-specializations/`;
-export const INSTITUTION = `/core/institution/`;
-export const ADS = `/core/ads/`;
-export const BRANCHES = `/core/management-branches/`;
-export const CUSTOMER_SUPPORTS = `/core/customer-support/`;
-export const EMPLOYEES = `/employee/employees/`;
-export const JOB_ROLES = `/employee/job-roles/`;
-export const PERMESSOINS = `/employee/permissions/`;
-export const PRESCRIPTIONS = `/core/prescriptions/`;
+export const VERFICATOIN = `/core/verify-verification-code/`;
+export const SUBJECTS = `/lessons/subjects/`;
+export const LESSONS = `/lessons/lessons/`;
+export const VIDEOS = `/lessons/videos/`;
+export const PAST_EXAMS = `/lessons/past-exams/`;
+export const Summaries = `/lessons/summaries/`;
+export const INTERACTIVE_QUESTIONS = `/lessons/interactive-questions/`;
 
-// providers
-export const DOCTORS = `/core/doctors/`;
-export const THERAPY = `/core/therapy/`;
-export const SCAN = `/core/scans/`;
-
-export const CATEGORIES = `/service/categories/`;
-export const SERVICES = `/service/services/`;
-export const LAB = `/core/labs/`;
-export const HOSPITAL = `/core/hospital/`;
-export const PROVIDER_BRANCHES = `/core/provider-branches/by-provider/`;
-export const PROVIDER_BRANCHES_UD = `/core/provider-branches/`;
-export const PROVIDER_SERVICES = `/service/provider/`;
-export const ORDERS = `/core/orders/pending-accepted-orders/`;
-export const FINANCE = `/core/orders/pending-accepted-orders/?status=accepted`;
-/* Services */
-export const specializationServices = createService(SPECIALIZATIONS);
-export const branchesServices = createService(BRANCHES);
-export const adServics = createService(ADS);
-export const prescriptionServices = createService(PRESCRIPTIONS);
-export const permissionsService = createService(PERMESSOINS);
-export const customerSupportsServices = createService(CUSTOMER_SUPPORTS);
-export const doctorServices = createService(DOCTORS);
-export const categoriesServices = createService(CATEGORIES);
-export const servicesServices = createService(SERVICES);
-export const labServices = createService(LAB);
-export const hospitalServices = createService(HOSPITAL);
-export const providerBranchesServices = createService(PROVIDER_BRANCHES);
-export const providerBranchesServicesUD = createService(PROVIDER_BRANCHES_UD);
-export const therapyServices = createService(THERAPY);
-export const scanServices = createService(SCAN);
-export const ordersServices = createService(ORDERS);
-export const financeByOrdersServices = createService(FINANCE);
-
-// export const providerServicesServices = createService(PROVIDER_SERVICES);
-
-servicesServices.getInfForDoc = async ({ page = 1, search = "" }) => {
-  const params = { page, search };
-  params.service_type = "clinic";
-  const response = await apiRequest("get", SERVICES, { params });
-  return {
-    data: response.results,
-    nextPage: response.next ? page + 1 : undefined,
-    total: response.count,
-  };
-};
+export const verficationServices = createService(VERFICATOIN);
+export const subjectsServices = createService(SUBJECTS);
+export const lessonsServices = createService(LESSONS);
+export const videosServices = createService(VIDEOS);
+export const pastExamsServices = createService(PAST_EXAMS);
+export const summariesServices = createService(Summaries);
+export const interactiveQuestionsServices = createService(
+  INTERACTIVE_QUESTIONS
+);
 
 export default BASEURL;
