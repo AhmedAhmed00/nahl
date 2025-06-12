@@ -1,5 +1,4 @@
 import { BsPerson } from "react-icons/bs";
-import { Profile } from "../ui/AuthContainer";
 import { Container } from "../ui/Container";
 import NavigateCard from "../ui/NavigateCard";
 import Row from "../ui/Row";
@@ -8,6 +7,7 @@ import Heading from "../ui/Heading";
 import { motion } from "framer-motion";
 import AnimatedBlockList from "../ui/AnimatedCards";
 import { useParams } from "react-router-dom";
+import Profile from "../ui/Profile";
 
 const cardVariants = {
   hidden: (index) => ({
@@ -61,15 +61,7 @@ export default function GradeContents() {
     >
       <Container>
         <StyledTopHeader>
-          <Profile>
-            <BsPerson
-              style={{
-                display: "block",
-                color: "#d4dbdb",
-              }}
-              size={70}
-            />
-          </Profile>
+          <Profile size={70} />
           <div>
             <Heading color="light" as={"h1"}>
               منصة نهل أكاديمي

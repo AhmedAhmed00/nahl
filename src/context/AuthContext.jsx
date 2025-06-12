@@ -2,6 +2,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useProfile } from "../hooks/useProfile";
+import { profileServices } from "../data/api";
 
 const AuthContext = createContext(null);
 
@@ -12,6 +14,11 @@ export default function AuthProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isVerfied, setIsVerfied] = useState(false);
   const navigate = useNavigate();
+
+  const { data: profile, isFetching: isLoadingProfile } = useProfile({
+    service: profileServices,
+    key: "profile",
+  });
 
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
@@ -81,6 +88,8 @@ export default function AuthProvider({ children }) {
         signUp,
         login,
         isLoading,
+        profile,
+        isLoadingProfile,
       }}
     >
       {children}

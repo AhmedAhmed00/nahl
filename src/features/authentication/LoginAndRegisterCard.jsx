@@ -12,12 +12,7 @@ import { StyledPhoneInput } from "../../ui/PhoneNumbers";
 import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
 import { t } from "i18next";
-
-const Profile = styled.div`
-  width: 100%;
-
-  height: 250px;
-`;
+import Profile from "../../ui/Profile";
 
 function LoginAndRegisterCard() {
   const navigate = useNavigate();
@@ -43,16 +38,8 @@ function LoginAndRegisterCard() {
 
   return (
     <>
-      <Profile>
-        <BsPerson
-          style={{
-            display: "block",
-            margin: "auto",
-            color: "#d4dbdb",
-          }}
-          size={260}
-        />
-      </Profile>
+      <Profile size={260} />
+
       <FormRow label={t("dataKeys.phone")}>
         <Controller
           name="phone"

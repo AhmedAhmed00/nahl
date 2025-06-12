@@ -2,12 +2,10 @@ import { useTranslation } from "react-i18next";
 import { Container } from "../ui/Container";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
-import styled from "styled-components";
-import { Profile } from "../ui/AuthContainer";
-import { BsPerson } from "react-icons/bs";
 import { StyledTopHeader } from "../ui/TopHeader";
 import { Article } from "../ui/Article";
 import NavigateCard from "../ui/NavigateCard";
+import Profile from "../ui/Profile";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -15,15 +13,7 @@ export default function Home() {
   return (
     <Container>
       <StyledTopHeader>
-        <Profile>
-          <BsPerson
-            style={{
-              display: "block",
-              color: "#d4dbdb",
-            }}
-            size={70}
-          />
-        </Profile>
+        <Profile size={70} />
         <div>
           <Heading color="light" as={"h1"}>
             منصة نهل أكاديمي

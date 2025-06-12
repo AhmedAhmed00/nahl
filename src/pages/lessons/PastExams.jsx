@@ -1,5 +1,5 @@
 import { BsFileEarmarkPdf, BsPerson, BsPlayCircle } from "react-icons/bs";
-import { Profile } from "../../ui/AuthContainer";
+import Profile from "../../ui/Profile";
 import { Container } from "../../ui/Container";
 import Row from "../../ui/Row";
 import { StyledTopHeader } from "../../ui/TopHeader";
@@ -47,12 +47,7 @@ export default function PastExams() {
     >
       <Container>
         <StyledTopHeader>
-          <Profile>
-            <BsPerson
-              style={{ display: "block", color: "#d4dbdb" }}
-              size={70}
-            />
-          </Profile>
+          <Profile size={70} />
           <div>
             <Heading color="light" as="h1">
               منصة نهل أكاديمي

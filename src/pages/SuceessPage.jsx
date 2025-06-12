@@ -7,9 +7,9 @@ import animationData3 from "./../../public/animation/celeberation2.json";
 import { StyledTopHeader } from "../ui/TopHeader";
 import { BsPerson } from "react-icons/bs";
 import Heading from "../ui/Heading";
-import { Profile } from "../ui/AuthContainer";
 import { Container } from "../ui/Container";
 import graduation from "./../../public/graduation.png";
+import Profile from "../ui/Profile";
 
 export default function SuccessPage() {
   const containerRef = useRef(null);
@@ -100,9 +100,7 @@ export default function SuccessPage() {
   return (
     <Container style={{ width: "100%", height: "100vh", position: "relative" }}>
       <StyledTopHeader style={headerWrapperStyles}>
-        <Profile>
-          <BsPerson style={{ display: "block", color: "#d4dbdb" }} size={70} />
-        </Profile>
+        <Profile size={70} />
         <motion.div
           initial={{ top: 0 }}
           animate={{ top: moveHeading ? "90%" : 0 }}

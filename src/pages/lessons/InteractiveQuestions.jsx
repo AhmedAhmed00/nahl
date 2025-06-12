@@ -1,18 +1,14 @@
 import { BsFileEarmarkPdf, BsPerson, BsPlayCircle } from "react-icons/bs";
-import { Profile } from "../../ui/AuthContainer";
 import { Container } from "../../ui/Container";
 import Row from "../../ui/Row";
 import { StyledTopHeader } from "../../ui/TopHeader";
 import Heading from "../../ui/Heading";
 import { motion } from "framer-motion";
 import { useFetch } from "../../hooks/useFetch";
-import {
-  interactiveQuestionsServices,
-  pastExamsServices,
-  videosServices,
-} from "../../data/api";
+import { interactiveQuestionsServices } from "../../data/api";
 import { useParams, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
+import Profile from "../../ui/Profile";
 
 export default function InteractiveQuestions() {
   const [searchParams] = useSearchParams();
@@ -51,12 +47,7 @@ export default function InteractiveQuestions() {
     >
       <Container>
         <StyledTopHeader>
-          <Profile>
-            <BsPerson
-              style={{ display: "block", color: "#d4dbdb" }}
-              size={70}
-            />
-          </Profile>
+          <Profile size={70} />
           <div>
             <Heading color="light" as="h1">
               منصة نهل أكاديمي

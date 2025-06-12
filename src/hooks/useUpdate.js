@@ -10,7 +10,7 @@ export default function useUpdate({ key, resourse, service }) {
     data,
     status: updatingStatus,
   } = useMutation({
-    mutationFn: ({ id, body }) => service(id, body),
+    mutationFn: ({ body }) => service(body),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: [key],

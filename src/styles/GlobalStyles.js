@@ -117,17 +117,24 @@ body {
 }
 
 body::before {
-  content: "نَهل";
+  content: "";
   position: absolute;
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 22rem; /* Adjust size as needed */
-  color: rgba(255, 255, 255, 0.1); 
-  pointer-events: none; /* Prevents it from interfering with clicks */
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  height: auto;
+  background-image: url('/nahl.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
   z-index: 0;
-  white-space: nowrap;
 }
+
+
 
 input,
 button,

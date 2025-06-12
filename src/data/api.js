@@ -82,6 +82,7 @@ export function createService(baseUrl) {
     getById: (id) => apiRequest("get", `${baseUrl}${id}/`),
     create: (body) => apiRequest("post", baseUrl, body),
     update: (id, body) => apiRequest("patch", `${baseUrl}${id}/`, body),
+    updateWithoutId: (body) => apiRequest("patch", `${baseUrl}`, body),
     delete: (id) => apiRequest("delete", `${baseUrl}${id}/`),
     getInfinite: async ({ page = 1, search = "" }) => {
       const params = { page, search };
@@ -122,6 +123,8 @@ export const VIDEOS = `/lessons/videos/`;
 export const PAST_EXAMS = `/lessons/past-exams/`;
 export const Summaries = `/lessons/summaries/`;
 export const INTERACTIVE_QUESTIONS = `/lessons/interactive-questions/`;
+export const PROFILE = `/profile/`;
+export const CHANGE_PASSWORD = `/core/change-password/`;
 
 export const verficationServices = createService(VERFICATOIN);
 export const subjectsServices = createService(SUBJECTS);
@@ -132,5 +135,7 @@ export const summariesServices = createService(Summaries);
 export const interactiveQuestionsServices = createService(
   INTERACTIVE_QUESTIONS
 );
+export const profileServices = createService(PROFILE);
+export const changePassServices = createService(CHANGE_PASSWORD);
 
 export default BASEURL;

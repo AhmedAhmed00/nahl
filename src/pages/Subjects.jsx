@@ -1,5 +1,4 @@
 import { BsPerson } from "react-icons/bs";
-import { Profile } from "../ui/AuthContainer";
 import { Container } from "../ui/Container";
 import NavigateCard from "../ui/NavigateCard"; // If unused, consider removing
 import Row from "../ui/Row";
@@ -11,6 +10,7 @@ import { useFetch } from "../hooks/useFetch";
 import { subjectsServices } from "../data/api";
 import { useSearchParams } from "react-router-dom";
 import { useMemo } from "react";
+import Profile from "../ui/Profile";
 
 export default function Subjects() {
   const [searchParams] = useSearchParams();
@@ -55,12 +55,7 @@ export default function Subjects() {
     >
       <Container>
         <StyledTopHeader>
-          <Profile>
-            <BsPerson
-              style={{ display: "block", color: "#d4dbdb" }}
-              size={70}
-            />
-          </Profile>
+          <Profile size={70} />
           <div>
             <Heading color="light" as="h1">
               منصة نهل أكاديمي

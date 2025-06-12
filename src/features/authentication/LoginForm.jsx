@@ -12,10 +12,7 @@ import { StyledPhoneInput } from "../../ui/PhoneNumbers";
 import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
 import { t } from "i18next";
-
-const Profile = styled.div`
-  height: 150px;
-`;
+import Profile from "../../ui/Profile";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -54,16 +51,7 @@ function LoginForm() {
         }}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <Profile>
-          <BsPerson
-            style={{
-              display: "block",
-              margin: "auto",
-              color: "#d4dbdb",
-            }}
-            size={170}
-          />
-        </Profile>
+        <Profile size={170} />
 
         <FormRow label={"رقم الهاتف"}>
           <Controller

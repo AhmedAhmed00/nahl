@@ -13,10 +13,7 @@ import styled from "styled-components";
 import { t } from "i18next";
 import { z } from "zod";
 import useValidate from "../../hooks/useValidate";
-
-const Profile = styled.div`
-  height: 150px;
-`;
+import Profile from "../../ui/Profile";
 
 const userSchema = z
   .object({
@@ -98,16 +95,7 @@ function RegisterForm() {
           }}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <Profile>
-            <BsPerson
-              style={{
-                display: "block",
-                margin: "auto",
-                color: "#d4dbdb",
-              }}
-              size={170}
-            />
-          </Profile>
+          <Profile size={260} />
 
           <FormRow
             error={validate("name")}
@@ -133,7 +121,7 @@ function RegisterForm() {
               control={control}
               render={({ field }) => (
                 <StyledPhoneInput
-                  country="eg"
+                  country="ly"
                   prefix="+"
                   disabled={isLoading}
                   {...field}
