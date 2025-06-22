@@ -363,6 +363,7 @@ const Profile = ({ size }) => {
           onClick={togglePopup}
           style={{
             display: "block",
+            margin:"auto",
             color: isPopupOpen ? "#ffffff" : "#d4dbdb",
             transition: "color 0.2s ease",
           }}
