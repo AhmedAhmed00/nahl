@@ -14,6 +14,7 @@ import { t } from "i18next";
 import { z } from "zod";
 import useValidate from "../../hooks/useValidate";
 import Profile from "../../ui/Profile";
+import { PasswordInput } from "../../ui/inputPassword";
 
 const userSchema = z
   .object({
@@ -136,13 +137,14 @@ function RegisterForm() {
             label={"الرقم السري"}
             orientation="vertical"
           >
-            <Input
-              type="password"
-              id="password"
-              placeholder="أدخل الرقم السري"
-              disabled={isLoading}
-              {...register("password")}
-            />
+                    <PasswordInput
+                     register={register}  
+                       disabled={isLoading}
+            placeholder="أدخل الرقم السري"
+ name="password" dangerBorder={errors.password}
+  />
+
+           
           </FormRow>
 
           <FormRow
@@ -150,13 +152,23 @@ function RegisterForm() {
             label={"تأكيد الرقم السري"}
             orientation="vertical"
           >
-            <Input
-              type="password"
-              id="confirm_password"
-              placeholder="أعد كتابة الرقم السري"
-              disabled={isLoading}
-              {...register("confirm_password")}
-            />
+
+
+
+
+
+
+<PasswordInput
+                     register={register}  
+                       disabled={isLoading}
+                       placeholder="أعد كتابة الرقم السري"
+
+ name="confirm_password" dangerBorder={errors.password}
+  />
+
+
+
+        
           </FormRow>
 
           <FormRow>

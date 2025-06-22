@@ -220,7 +220,6 @@ img {
   border: 1px solid var(--color-grey-300);
   background-color: var(--color-grey-0);
   border-radius: var(--border-radius-sm);
-  ${"" /* padding: ${({ theme }) => (theme.direction === "ltr" ? "0 0 0 7.2rem !important" : "")}; */}
   
   
   box-shadow: var(--shadow-sm);

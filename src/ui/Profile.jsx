@@ -16,6 +16,7 @@ import usePost from "../hooks/usePost";
 import toast from "react-hot-toast";
 import { useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+import SpinnerMini from "./SpinnerMini";
 
 // Styled components
 export const StyledProfile = styled.div`
@@ -308,7 +309,7 @@ const Profile = ({ size }) => {
     setIsModalOpen(false);
   };
 
-  const { mutate: updatePass } = usePost({
+  const { mutate: updatePass ,addingStatus:isLoadingUpdate } = usePost({
     service: changePassServices.create,
     key: "profile",
     resourse: "الرقم السري",
@@ -412,9 +413,10 @@ const Profile = ({ size }) => {
               <span
                 onClick={() => {
                   console.log("in function");
-                  localStorage.removeItem("accessToken");
                   localStorage.removeItem("refreshToken");
-                  navigate("/auth");
+                  localStorage.removeItem("accessToken");
+                  window.location.reload();
+
                   queryClient.removeQueries();
                 }}
               >
@@ -515,7 +517,12 @@ const Profile = ({ size }) => {
                 <SecondaryButton type="button" onClick={closePasswordModal}>
                   إلغاء
                 </SecondaryButton>
-                <PrimaryButton type="submit">تأكيد</PrimaryButton>
+                <PrimaryButton disabled={isLoadingUpdate==='loading'} type="submit">
+
+                  {isLoadingUpdate==='loading'? <SpinnerMini />:"تأكيد"}
+               
+                  
+                  </PrimaryButton>
               </ModalFooter>
             </form>
           </ModalContent>

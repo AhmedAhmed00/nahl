@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useQueryParams from "./useQueryParams";
 import { useSearchParams } from "react-router-dom";
+import { profileServices } from "../data/api";
 
 export function useProfile({
   key,
@@ -12,7 +13,7 @@ export function useProfile({
 }) {
   const { data, isFetching, isError, isLoading } = useQuery({
     queryKey: [key],
-    queryFn: () => service(),
+    queryFn: () => profileServices.getAll(),
     enabled,
     cacheTime,
   });

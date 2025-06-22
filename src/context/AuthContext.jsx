@@ -18,6 +18,7 @@ export default function AuthProvider({ children }) {
   const { data: profile, isFetching: isLoadingProfile } = useProfile({
     service: profileServices,
     key: "profile",
+    enabled:!!localStorage.getItem("accessToken")
   });
 
   useEffect(() => {
@@ -87,9 +88,8 @@ export default function AuthProvider({ children }) {
         logout,
         signUp,
         login,
-        isLoading,
-        profile,
-        isLoadingProfile,
+        isLoading,profile,isLoadingProfile
+ 
       }}
     >
       {children}

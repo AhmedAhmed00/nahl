@@ -123,7 +123,7 @@ export const VIDEOS = `/lessons/videos/`;
 export const PAST_EXAMS = `/lessons/past-exams/`;
 export const Summaries = `/lessons/summaries/`;
 export const INTERACTIVE_QUESTIONS = `/lessons/interactive-questions/`;
-export const PROFILE = `/profile/`;
+export const PROFILE = `/core/profile/`;
 export const CHANGE_PASSWORD = `/core/change-password/`;
 
 export const verficationServices = createService(VERFICATOIN);

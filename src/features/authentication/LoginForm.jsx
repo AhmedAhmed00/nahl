@@ -2,17 +2,15 @@ import { useEffect } from "react";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
-import Input from "../../ui/Input";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginschema } from "./loginSchema";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { StyledPhoneInput } from "../../ui/PhoneNumbers";
-import { BsPerson } from "react-icons/bs";
-import styled from "styled-components";
-import { t } from "i18next";
+
 import Profile from "../../ui/Profile";
+import { PasswordInput } from "../../ui/inputPassword";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -62,7 +60,7 @@ function LoginForm() {
         </FormRow>
 
         <FormRow label={"الرقم السري"} orientation="vertical">
-          <Input type="password" id="password" {...register("password")} />
+        <PasswordInput register={register} name="password" dangerBorder={errors.password} />
         </FormRow>
 
         <FormRow>
