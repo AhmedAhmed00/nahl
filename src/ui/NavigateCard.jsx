@@ -65,13 +65,13 @@ const BackgroundGlow = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  height: 800px;
+  height: 700px;
   background: radial-gradient(circle, rgb(204, 250, 21) 0%, transparent 45%);
   filter: blur(10px);
   z-index: 0;
   opacity: 0.8;
   @media (max-width: 768px) {
-    width: 350px;
+    width: 250px;
   }
 `;
 

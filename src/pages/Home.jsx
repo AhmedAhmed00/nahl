@@ -34,8 +34,8 @@ export default function Home() {
         </Article>
       </Row>
       <Row type="horizontal" justify="center" $gap="130px">
-        <NavigateCard title={"الشهاد العدادي"} to={"/grade/prep"} />
-        <NavigateCard to={"/grade/secondary"} title={"الشهاد الثانوي"} />
+        <NavigateCard title={"الشهاد العدادي"} to={"/stage/prep"} />
+        <NavigateCard to={"/stage/secondary"} title={"الشهاد الثانوي"} />
       </Row>
     </Container>
   );

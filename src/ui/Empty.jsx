@@ -28,8 +28,7 @@ function Empty() {
         gap="15px"
         type="vertical"
       >
-        <StyledImg />
-        <p style={{ marginLeft: "20px" }}>There is no results,</p>
+        <p style={{fontSize:"50px",color:"white" }}>لا توجد نتائح</p>
       </Row>
     </StyledEmpty>
   );

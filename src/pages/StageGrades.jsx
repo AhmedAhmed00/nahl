@@ -8,6 +8,9 @@ import { motion } from "framer-motion";
 import AnimatedBlockList from "../ui/AnimatedCards";
 import { useParams } from "react-router-dom";
 import Profile from "../ui/Profile";
+import { useFetch } from "../hooks/useFetch";
+import { gradeServices } from "../data/api";
+import Empty from "../ui/Empty";
 
 const cardVariants = {
   hidden: (index) => ({
@@ -33,25 +36,23 @@ const cardVariants = {
   },
 };
 
-export default function GradeContents() {
-  const { grade } = useParams();
-  const blocks = [
-    { id: 1, title: "منهاج", to: `/subjects?grade=${grade}&type=lessons` },
-    {
-      id: 2,
-      title: "تفاعلية أسئلة",
-      to: `/subjects?grade=${grade}&type=interactive-questions`,
+export default function StageGrades() {
+  const { stage } = useParams();
+  const { data: { results: grades } = {} } = useFetch({
+    service: gradeServices.getAll,
+    params: {
+      stage: stage,
     },
-    { id: 4, title: "فيديوهات", to: `/subjects?grade=${grade}&type=videos` },
-    {
-      id: 5,
-      title: "إمتحانات سابقة",
-      to: `/subjects?grade=${grade}&type=past-exams`,
-    },
-    { id: 6, title: "ملخصات", to: `/subjects?grade=${grade}&type=summaries` },
-  ];
+  });
+  console.log(grades);
+  const blocks = grades?.map((grade) => ({
+    id: grade.id,
+    title: grade.name,
+    to: `/stage/${stage}/grade/${grade.id}`,
+  }));
 
-  console.log(grade);
+  if (!blocks?.length) return <Empty></Empty>;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

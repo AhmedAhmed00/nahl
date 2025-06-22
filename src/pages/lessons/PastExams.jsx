@@ -82,7 +82,7 @@ export default function PastExams() {
               </LessonRow>
             ))
           ) : (
-            <p>No lessons available for this subject.</p>
+            <p style={{color:"white", fontSize:"30px"}}>لا تتوفر امتحانات الان لهذه المرحلة</p>
           )}
         </Row>
       </Container>

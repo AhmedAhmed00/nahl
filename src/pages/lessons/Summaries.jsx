@@ -86,7 +86,7 @@ export default function Summaries() {
               </LessonRow>
             ))
           ) : (
-            <p>No lessons available for this subject.</p>
+            <p style={{color:"white", fontSize:"30px"}}>لا يوجد ملخصات متاحة الان لهذه المادة</p>
           )}
         </Row>
       </Container>

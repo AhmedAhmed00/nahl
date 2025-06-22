@@ -8,7 +8,7 @@ import Unauthorized from "./features/authentication/Unauthorized";
 import AppLayout from "./ui/layout/AppLayout";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
-import GradeContents from "./pages/GradeContents";
+import StageContents from "./pages/StageGradeContents";
 import Subjects from "./pages/Subjects";
 import SuceessPage from "./pages/SuceessPage";
 import VerficationCode from "./pages/VerficationCode";
@@ -18,6 +18,7 @@ import InteractiveQuestions from "./pages/lessons/InteractiveQuestions";
 import Videos from "./pages/lessons/Videos";
 import PastExams from "./pages/lessons/PastExams";
 import Summaries from "./pages/lessons/Summaries";
+import StageGrades from "./pages/StageGrades";
 
 const protectedRoutes = [
   {
@@ -27,7 +28,8 @@ const protectedRoutes = [
       { index: true, element: <Navigate replace to="home" /> },
       { path: "home", element: <Home /> },
 
-      { path: "grade/:grade", element: <GradeContents /> },
+      { path: "stage/:stage", element: <StageGrades /> },
+      { path: "stage/:stage/grade/:grade", element: <StageContents /> },
 
       { path: "/subjects", element: <Subjects /> },
       { path: "/subjects/videos/:id", element: <Videos /> },

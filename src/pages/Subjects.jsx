@@ -68,7 +68,7 @@ export default function Subjects() {
           {blocks.length > 0 ? (
             <AnimatedBlockList key={blocks.length} blocks={blocks} />
           ) : (
-            <p>No subjects available for this stage.</p>
+            <p style={{color:"white", fontSize:"30px"}}>لا توجد مواد متاحة الان لهذه المرحلة</p>
           )}
         </Row>
       </Container>

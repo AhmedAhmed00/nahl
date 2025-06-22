@@ -81,7 +81,7 @@ export default function Lessons() {
               </LessonRow>
             ))
           ) : (
-            <p>No lessons available for this subject.</p>
+            <p style={{color:"white", fontSize:"30px"}}>لا توجد مواد دروس الان لهذه المادة</p>
           )}
         </Row>
       </Container>

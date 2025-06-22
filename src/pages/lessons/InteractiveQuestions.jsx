@@ -1,3 +1,4 @@
+import { useEffect, useReducer, useState } from "react";
 import { BsFileEarmarkPdf, BsPerson, BsPlayCircle } from "react-icons/bs";
 import { Container } from "../../ui/Container";
 import Row from "../../ui/Row";
@@ -9,34 +10,125 @@ import { interactiveQuestionsServices } from "../../data/api";
 import { useParams, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import Profile from "../../ui/Profile";
+import { date } from "zod";
+import Progress from "../../ui/Progress";
+import Question from "../../ui/Question";
+import NextButton from "../../ui/NextBtn";
+import Timer from "../../ui/Timer";
+import FinishedScreen from "../../ui/FinishedScreen";
+import Empty from "../../ui/Empty";
+import Button from "../../ui/Button";
+
+const initState = {
+  questions: [],
+  status: "loading",
+  index: 0,
+  points: 0,
+  answer: null,
+  remainingSeconds: null,
+};
+
+function reducer(currentState, action) {
+  switch (action.type) {
+    case "success":
+      return {
+        ...currentState,
+        questions: action.payload,
+        status: "ready",
+        points: 0,
+      };
+    case "Error":
+      return { ...currentState, status: "Error" };
+    case "start":
+      return {
+        ...currentState,
+        status: "active",
+        remainingSeconds: currentState.questions.length * 20,
+      };
+    case "newAnswer":
+      const question = currentState.questions.at(currentState.index);
+      console.log(question,"queeeeeeeees")
+      console.log(action.payload,"payloooooooooad")
+      return {
+        ...currentState,
+        answer: action.payload,
+        points:
+          Number(action.payload) === Number(question.correct_choice)
+            ? Number(currentState.points) + Number(10)
+            : currentState.points,
+      };
+    case "nextQues":
+      return { ...currentState, index: currentState.index + 1, answer: null };
+    case "finished": {
+      return { ...currentState, status: "finished" };
+    }
+    case "restart":
+      return {
+        ...initState,
+        questions: currentState.questions,
+        status: "ready",
+      };
+    case "tick":
+      return {
+        ...currentState,
+        remainingSeconds: currentState.remainingSeconds - 1,
+        status:
+          currentState.remainingSeconds === 0
+            ? "finished"
+            : currentState.status,
+      };
+    default:
+      return currentState;
+  }
+}
+const ResponsiveContainer = styled(Container)`
+  max-width: 70%;
+  margin: auto;
+  margin-block: 40px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+`;
 
 export default function InteractiveQuestions() {
   const [searchParams] = useSearchParams();
-  const stage = searchParams.get("grade") ?? "";
+
+  const [state, dispatch] = useReducer(reducer, initState);
+  const { questions, status, index, answer, points, remainingSeconds } = state;
+  const numOfQuestions = questions.length;
+  const maxPoints = questions.reduce((prev, cur) => prev + 10, 0);
+
+  const grade = searchParams.get("grade") ?? "";
   const { id: subjectId } = useParams();
 
   const {
-    data: { results: lessons } = {},
+    data: { data: lessons } = {},
     data,
     isError,
     isLoading,
-    isFetching,
   } = useFetch({
     key: "interactive-questions",
     service: interactiveQuestionsServices.getAll,
-    params: { stage, subject_id: subjectId },
+    params: { grade, subject_id: subjectId },
   });
 
-  console.log(data);
+  useEffect(() => {
+    if (data?.results?.length) {
+      dispatch({ type: "success", payload: data.results });
+    }
+  }, [data, lessons]);
 
-  if (isLoading || isFetching) {
+  const subjectName = data?.data?.[0]?.subject?.name;
+
+  if (isLoading) {
     return <div>Loading lessons...</div>;
   }
 
   if (isError) {
     return <div>Failed to load lessons. Please try again later.</div>;
   }
-  const subjectName = data?.results?.[0]?.subject?.name;
+  if (!data.results?.length) return <Empty resource="اسئله" />;
 
   return (
     <motion.div
@@ -56,6 +148,8 @@ export default function InteractiveQuestions() {
           <div /> {/* Empty column to balance layout */}
         </StyledTopHeader>
 
+        <ResponsiveContainer>
+
         <Heading
           color="light"
           style={{
@@ -66,50 +160,56 @@ export default function InteractiveQuestions() {
         >
           {subjectName}
         </Heading>
+        {status === "loading" && <div>loading...</div>}
+        {status === "ready" && (
+          <div >
+             <div className="start">
+      <h3> عدد {numOfQuestions} من الاسئلة التفاعلية </h3>
+      <button
+        className="btn btn-ui"
+        onClick={() => {
+          dispatch({ type: "start" });
+        }}
+      >
+        إبدإ الاختبار
+      </button>
+    </div>
+       
+          </div>
+        )}
 
-        <Row $margin="60px 0" type="vertical" gap="20px">
-          {lessons?.length > 0 ? (
-            lessons.map((lesson) => (
-              <LessonRow key={lesson.id}>
-                <LessonTitle>{lesson.title}</LessonTitle>
-                <PdfLink
-                  href={lesson.pdf_file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <BsFileEarmarkPdf size={62} color="#d9534f" />
-                </PdfLink>
-              </LessonRow>
-            ))
-          ) : (
-            <p>No lessons available for this subject.</p>
-          )}
-        </Row>
+        {status === "active" && (
+          <>
+            <Progress
+              maxPoints={maxPoints}
+              points={points}
+              index={index}
+              numOfQues={numOfQuestions}
+              answer={answer}
+            />
+            <Question
+              answer={answer}
+              dispatch={dispatch}
+              question={questions[index]}
+            />
+            <Timer remainingSeconds={remainingSeconds} dispatch={dispatch} />
+            <NextButton
+              answer={answer}
+              dispatch={dispatch}
+              index={index}
+              numOfQues={numOfQuestions}
+            />
+          </>
+        )}
+        {status === "finished" && (
+          <FinishedScreen
+            points={points}
+            maxPoints={maxPoints}
+            dispatch={dispatch}
+          />
+        )}
+        </ResponsiveContainer>
       </Container>
     </motion.div>
   );
 }
-
-// Styled components
-const LessonRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  border-radius: 12px;
-`;
-
-const LessonTitle = styled.span`
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--color-light);
-`;
-
-const PdfLink = styled.a`
-  display: flex;
-  align-items: center;
-  transition: transform 0.2s ease;
-  &:hover {
-    transform: scale(1.1);
-  }
-`;

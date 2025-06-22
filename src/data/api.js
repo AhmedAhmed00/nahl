@@ -137,5 +137,6 @@ export const interactiveQuestionsServices = createService(
 );
 export const profileServices = createService(PROFILE);
 export const changePassServices = createService(CHANGE_PASSWORD);
+export const gradeServices = createService("/lessons/grades/");
 
 export default BASEURL;

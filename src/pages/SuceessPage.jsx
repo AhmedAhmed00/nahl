@@ -10,6 +10,7 @@ import Heading from "../ui/Heading";
 import { Container } from "../ui/Container";
 import graduation from "./../../public/graduation.png";
 import Profile from "../ui/Profile";
+import { Link, useLocation } from "react-router-dom";
 
 export default function SuccessPage() {
   const containerRef = useRef(null);
@@ -19,6 +20,9 @@ export default function SuccessPage() {
   const [showImage, setShowImage] = useState(false);
 
   const animations = [animationData1, animationData2, animationData3];
+  const location = useLocation()
+  const { points, maxPoints, percentage, dispatch } = location.state || {};
+
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -92,9 +96,10 @@ export default function SuccessPage() {
   const lottieContainerStyles = {
     position: "absolute",
     top: "-120px",
-    width: "100%",
+    width: "90%",
     height: "160%",
     marginTop: "120px",
+    maxHeight:"100vh"
   };
 
   return (
@@ -108,7 +113,8 @@ export default function SuccessPage() {
           style={motionHeadingStyles}
         >
           {/* Graduation image appears only after heading movement */}
-
+  
+ 
           {showImage && (
             <motion.img
               src={graduation}
@@ -119,7 +125,7 @@ export default function SuccessPage() {
               transition={{ duration: 1, ease: "easeInOut" }}
               style={{
                 position: "absolute",
-                top: "-100px", // vertical position
+                top: "-50px", // vertical position
                 left: "50%", // horizontal anchor
                 x: "-50%", // shift left half its width
                 y: "-50%", // shift up half its height
@@ -129,14 +135,34 @@ export default function SuccessPage() {
             />
           )}
 
-          <Heading color="light" as={"h1"}>
+          <Heading style={{marginTop:"40px"}} color="light" as={"h1"}>
             منصة نهل أكاديمي
           </Heading>
+          <p style={{marginBlock:"40px"}} className="result">
+          تهانينا لقد أحرزت <strong>{points}</strong> من {maxPoints} (
+        {Math.ceil(percentage)}%)
+      </p>
+  
         </motion.div>
+        
         <div /> {/* Empty right column */}
+       
       </StyledTopHeader>
+      <Link to={"/"}>
+  
+  <button style={{ 
+    padding:"10px 20px",
+    cursor:"pointer",
+    position:"relative",
+    zIndex:"2232323",
+    borderRadius:"10px",
+    top:"40%",
+    right:"50%",
+    transform:"translateX(50%)"
+  }}>العودة للرئيسية</button>
+      </Link>
 
-      <div ref={containerRef} style={lottieContainerStyles} />
+      <div  ref={containerRef} style={lottieContainerStyles} />
     </Container>
   );
 }
