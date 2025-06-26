@@ -47,13 +47,13 @@ function reducer(currentState, action) {
       };
     case "newAnswer":
       const question = currentState.questions.at(currentState.index);
-      console.log(question, "queeeeeeeees");
+      console.log(question.correct_choice, "correct_choice");
       console.log(action.payload, "payloooooooooad");
       return {
         ...currentState,
         answer: action.payload,
         points:
-          Number(action.payload) === Number(question.correct_choice)
+          action.payload === question.correct_choice
             ? Number(currentState.points) + Number(10)
             : currentState.points,
       };
@@ -99,7 +99,7 @@ export default function InteractiveQuestions() {
   const numOfQuestions = questions.length;
   const maxPoints = questions.reduce((prev, cur) => prev + 10, 0);
 
-  const { subjectId = "", grade = "" } = useParams();
+  const { subjectId = "", stage = "" } = useParams();
 
   const {
     data: { data: lessons } = {},
@@ -109,7 +109,7 @@ export default function InteractiveQuestions() {
   } = useFetch({
     key: "interactive-questions",
     service: interactiveQuestionsServices.getAll,
-    params: { grade, subject_id: subjectId },
+    params: { stage, subject_id: subjectId },
   });
 
   useEffect(() => {
