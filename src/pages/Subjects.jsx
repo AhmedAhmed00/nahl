@@ -22,9 +22,10 @@ export default function Subjects() {
     isLoading,
     isFetching,
   } = useFetch({
-    key: "subjects",
+    key: ["subjects", stage, grade],
     service: subjectsServices.getAll,
     params: { stage, grade },
+    cacheTime: 0,
   });
 
   const blocks = useMemo(() => {
@@ -36,7 +37,7 @@ export default function Subjects() {
         to: `/stage/${stage}/grade/${grade}/subject/${subject.id}`,
       })) || []
     );
-  }, [subjects]);
+  }, [subjects, grade, stage]);
 
   if (isLoading || isFetching) {
     return <div>Loading subjects...</div>;

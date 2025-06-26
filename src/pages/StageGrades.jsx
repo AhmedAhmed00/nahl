@@ -11,6 +11,10 @@ import Profile from "../ui/Profile";
 import { useFetch } from "../hooks/useFetch";
 import { gradeServices } from "../data/api";
 import Empty from "../ui/Empty";
+import { useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
+import SpinnerMini from "../ui/SpinnerMini";
+import Spinner from "../ui/Spinner";
 
 const cardVariants = {
   hidden: (index) => ({
@@ -38,13 +42,18 @@ const cardVariants = {
 
 export default function StageGrades() {
   const { stage } = useParams();
-  const { data: { results: grades } = {} } = useFetch({
+  const queryClient = useQueryClient();
+  const { data: { results: grades } = {}, isLoading } = useFetch({
     service: gradeServices.getAll,
+    key: ["grades", stage],
+    cacheTime: 0,
     params: {
       stage: stage,
     },
   });
-  console.log(grades);
+
+  if (isLoading) return null;
+
   const blocks = grades?.map((grade) => ({
     id: grade.id,
     title: grade.name,

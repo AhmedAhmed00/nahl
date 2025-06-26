@@ -7,9 +7,9 @@ const rotate = keyframes`
 `;
 
 const Spinner = styled.div`
-margin: ${(props) => (props.margin ? props.margin : "10.8rem auto")};
+  margin: ${(props) => (props.margin ? props.margin : "10.8rem auto")};
 
-  width: 6.4rem;
+  width: 10.4rem;
   aspect-ratio: 1;
   border-radius: 50%;
   background:
