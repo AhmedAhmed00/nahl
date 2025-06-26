@@ -29,15 +29,35 @@ const protectedRoutes = [
       { path: "home", element: <Home /> },
 
       { path: "stage/:stage", element: <StageGrades /> },
-      { path: "stage/:stage/grade/:grade", element: <StageContents /> },
 
-      { path: "/subjects", element: <Subjects /> },
-      { path: "/subjects/videos/:id", element: <Videos /> },
-      { path: "/subjects/lessons/:id", element: <Lessons /> },
-      { path: "/subjects/past-exams/:id", element: <PastExams /> },
-      { path: "/subjects/summaries/:id", element: <Summaries /> },
       {
-        path: "/subjects/interactive-questions/:id",
+        path: "stage/:stage/grade/:grade/",
+        element: <Subjects />,
+        children: [],
+      },
+
+      {
+        path: "/stage/:stage/grade/:grade/subject/:subjectId",
+        element: <StageContents />,
+      },
+      {
+        path: "/stage/:stage/grade/:grade/subject/:subjectId/videos/",
+        element: <Videos />,
+      },
+      {
+        path: "/stage/:stage/grade/:grade/subject/:subjectId/lessons",
+        element: <Lessons />,
+      },
+      {
+        path: "/stage/:stage/grade/:grade/subject/:subjectId/past-exams",
+        element: <PastExams />,
+      },
+      {
+        path: "/stage/:stage/grade/:grade/subject/:subjectId/summaries",
+        element: <Summaries />,
+      },
+      {
+        path: "/stage/:stage/grade/:grade/subject/:subjectId/interactive-questions",
         element: <InteractiveQuestions />,
       },
 

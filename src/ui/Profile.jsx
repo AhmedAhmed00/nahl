@@ -309,7 +309,7 @@ const Profile = ({ size }) => {
     setIsModalOpen(false);
   };
 
-  const { mutate: updatePass ,addingStatus:isLoadingUpdate } = usePost({
+  const { mutate: updatePass, addingStatus: isLoadingUpdate } = usePost({
     service: changePassServices.create,
     key: "profile",
     resourse: "الرقم السري",
@@ -363,7 +363,6 @@ const Profile = ({ size }) => {
           onClick={togglePopup}
           style={{
             display: "block",
-            margin:"auto",
             color: isPopupOpen ? "#ffffff" : "#d4dbdb",
             transition: "color 0.2s ease",
           }}
@@ -518,12 +517,12 @@ const Profile = ({ size }) => {
                 <SecondaryButton type="button" onClick={closePasswordModal}>
                   إلغاء
                 </SecondaryButton>
-                <PrimaryButton disabled={isLoadingUpdate==='loading'} type="submit">
-
-                  {isLoadingUpdate==='loading'? <SpinnerMini />:"تأكيد"}
-               
-                  
-                  </PrimaryButton>
+                <PrimaryButton
+                  disabled={isLoadingUpdate === "loading"}
+                  type="submit"
+                >
+                  {isLoadingUpdate === "loading" ? <SpinnerMini /> : "تأكيد"}
+                </PrimaryButton>
               </ModalFooter>
             </form>
           </ModalContent>

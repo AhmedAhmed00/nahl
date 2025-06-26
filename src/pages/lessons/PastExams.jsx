@@ -12,8 +12,7 @@ import styled from "styled-components";
 
 export default function PastExams() {
   const [searchParams] = useSearchParams();
-  const stage = searchParams.get("grade") ?? "";
-  const { id: subjectId } = useParams();
+  const { stage = "", subjectId = "" } = useParams();
 
   const {
     data: { results: lessons } = {},
@@ -82,7 +81,9 @@ export default function PastExams() {
               </LessonRow>
             ))
           ) : (
-            <p style={{color:"white", fontSize:"30px"}}>لا تتوفر امتحانات الان لهذه المرحلة</p>
+            <p style={{ color: "white", fontSize: "30px" }}>
+              لا تتوفر امتحانات الان لهذه المرحلة
+            </p>
           )}
         </Row>
       </Container>

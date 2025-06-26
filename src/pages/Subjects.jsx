@@ -8,14 +8,13 @@ import { motion } from "framer-motion";
 import AnimatedBlockList from "../ui/AnimatedCards";
 import { useFetch } from "../hooks/useFetch";
 import { subjectsServices } from "../data/api";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { useMemo } from "react";
 import Profile from "../ui/Profile";
 
 export default function Subjects() {
   const [searchParams] = useSearchParams();
-  const stage = searchParams.get("grade") ?? "";
-  const type = searchParams.get("type") ?? "";
+  const { stage = "", grade = "" } = useParams();
 
   const {
     data: { results: subjects } = {},
@@ -25,7 +24,7 @@ export default function Subjects() {
   } = useFetch({
     key: "subjects",
     service: subjectsServices.getAll,
-    params: { stage },
+    params: { stage, grade },
   });
 
   const blocks = useMemo(() => {
@@ -33,7 +32,8 @@ export default function Subjects() {
       subjects?.map((subject) => ({
         id: subject.id,
         title: subject.name,
-        to: `/subjects/${type}/${subject.id}?stage=${subject.stage}`,
+        // to: `/subjects/${type}/${subject.id}?stage=${subject.stage}`,
+        to: `/stage/${stage}/grade/${grade}/subject/${subject.id}`,
       })) || []
     );
   }, [subjects]);
@@ -68,7 +68,9 @@ export default function Subjects() {
           {blocks.length > 0 ? (
             <AnimatedBlockList key={blocks.length} blocks={blocks} />
           ) : (
-            <p style={{color:"white", fontSize:"30px"}}>لا توجد مواد متاحة الان لهذه المرحلة</p>
+            <p style={{ color: "white", fontSize: "30px" }}>
+              لا توجد مواد متاحة الان لهذه المرحلة
+            </p>
           )}
         </Row>
       </Container>

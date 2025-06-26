@@ -49,6 +49,7 @@ export default function StageGrades() {
     id: grade.id,
     title: grade.name,
     to: `/stage/${stage}/grade/${grade.id}`,
+    // to: `/subjects?stage=${stage}&grade=${grade.id}`,
   }));
 
   if (!blocks?.length) return <Empty></Empty>;

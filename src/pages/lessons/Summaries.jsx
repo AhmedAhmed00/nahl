@@ -15,9 +15,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Summaries() {
-  const [searchParams] = useSearchParams();
-  const stage = searchParams.get("grade") ?? "";
-  const { id: subjectId } = useParams();
+  const { stage = "", subjectId = "" } = useParams();
 
   const {
     data: { results: lessons } = {},
@@ -86,7 +84,9 @@ export default function Summaries() {
               </LessonRow>
             ))
           ) : (
-            <p style={{color:"white", fontSize:"30px"}}>لا يوجد ملخصات متاحة الان لهذه المادة</p>
+            <p style={{ color: "white", fontSize: "30px" }}>
+              لا يوجد ملخصات متاحة الان لهذه المادة
+            </p>
           )}
         </Row>
       </Container>

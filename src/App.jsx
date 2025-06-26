@@ -55,11 +55,7 @@ function App() {
         <Suspense fallback={<FullPageSpinner />}>
           <BrowserRouter>
             <AuthProvider>
-              <CityProvider>
-                <SpecProvider>
-                  <AppRoutes />
-                </SpecProvider>
-              </CityProvider>
+              <AppRoutes />
             </AuthProvider>
           </BrowserRouter>
         </Suspense>

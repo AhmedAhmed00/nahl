@@ -47,8 +47,8 @@ function reducer(currentState, action) {
       };
     case "newAnswer":
       const question = currentState.questions.at(currentState.index);
-      console.log(question,"queeeeeeeees")
-      console.log(action.payload,"payloooooooooad")
+      console.log(question, "queeeeeeeees");
+      console.log(action.payload, "payloooooooooad");
       return {
         ...currentState,
         answer: action.payload,
@@ -99,8 +99,7 @@ export default function InteractiveQuestions() {
   const numOfQuestions = questions.length;
   const maxPoints = questions.reduce((prev, cur) => prev + 10, 0);
 
-  const grade = searchParams.get("grade") ?? "";
-  const { id: subjectId } = useParams();
+  const { subjectId = "", grade = "" } = useParams();
 
   const {
     data: { data: lessons } = {},
@@ -149,65 +148,63 @@ export default function InteractiveQuestions() {
         </StyledTopHeader>
 
         <ResponsiveContainer>
+          <Heading
+            color="light"
+            style={{
+              textAlign: "center",
+              fontSize: "3rem",
+              marginTop: "30px",
+            }}
+          >
+            {subjectName}
+          </Heading>
+          {status === "loading" && <div>loading...</div>}
+          {status === "ready" && (
+            <div>
+              <div className="start">
+                <h3> عدد {numOfQuestions} من الاسئلة التفاعلية </h3>
+                <button
+                  className="btn btn-ui"
+                  onClick={() => {
+                    dispatch({ type: "start" });
+                  }}
+                >
+                  إبدإ الاختبار
+                </button>
+              </div>
+            </div>
+          )}
 
-        <Heading
-          color="light"
-          style={{
-            textAlign: "center",
-            fontSize: "3rem",
-            marginTop: "30px",
-          }}
-        >
-          {subjectName}
-        </Heading>
-        {status === "loading" && <div>loading...</div>}
-        {status === "ready" && (
-          <div >
-             <div className="start">
-      <h3> عدد {numOfQuestions} من الاسئلة التفاعلية </h3>
-      <button
-        className="btn btn-ui"
-        onClick={() => {
-          dispatch({ type: "start" });
-        }}
-      >
-        إبدإ الاختبار
-      </button>
-    </div>
-       
-          </div>
-        )}
-
-        {status === "active" && (
-          <>
-            <Progress
-              maxPoints={maxPoints}
+          {status === "active" && (
+            <>
+              <Progress
+                maxPoints={maxPoints}
+                points={points}
+                index={index}
+                numOfQues={numOfQuestions}
+                answer={answer}
+              />
+              <Question
+                answer={answer}
+                dispatch={dispatch}
+                question={questions[index]}
+              />
+              <Timer remainingSeconds={remainingSeconds} dispatch={dispatch} />
+              <NextButton
+                answer={answer}
+                dispatch={dispatch}
+                index={index}
+                numOfQues={numOfQuestions}
+              />
+            </>
+          )}
+          {status === "finished" && (
+            <FinishedScreen
               points={points}
-              index={index}
-              numOfQues={numOfQuestions}
-              answer={answer}
-            />
-            <Question
-              answer={answer}
+              maxPoints={maxPoints}
               dispatch={dispatch}
-              question={questions[index]}
             />
-            <Timer remainingSeconds={remainingSeconds} dispatch={dispatch} />
-            <NextButton
-              answer={answer}
-              dispatch={dispatch}
-              index={index}
-              numOfQues={numOfQuestions}
-            />
-          </>
-        )}
-        {status === "finished" && (
-          <FinishedScreen
-            points={points}
-            maxPoints={maxPoints}
-            dispatch={dispatch}
-          />
-        )}
+          )}
         </ResponsiveContainer>
       </Container>
     </motion.div>

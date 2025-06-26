@@ -36,23 +36,23 @@ const cardVariants = {
 export default function StageContents() {
   const { stage, grade } = useParams();
   const blocks = [
-    {
-      id: 1,
-      title: "منهاج",
-      to: `/subjects?stage=${stage}&grade=${grade}&type=lessons`,
-    },
+    // {
+    //   id: 1,
+    //   title: "منهاج",
+    //   to: `subjects`,
+    // },
     {
       id: 2,
       title: "تفاعلية أسئلة",
-      to: `/subjects?stage=${stage}&type=interactive-questions`,
+      to: `interactive-questions`,
     },
-    { id: 4, title: "فيديوهات", to: `/subjects?stage=${stage}&type=videos` },
+    { id: 4, title: "فيديوهات", to: `videos` },
     {
       id: 5,
       title: "إمتحانات سابقة",
-      to: `/subjects?stage=${stage}&type=past-exams`,
+      to: `past-exams`,
     },
-    { id: 6, title: "ملخصات", to: `/subjects?stage=${stage}&type=summaries` },
+    { id: 6, title: "ملخصات", to: `summaries` },
   ];
 
   console.log(stage);
